@@ -34,4 +34,13 @@ public class Arc {
     public void setSource(Vertex source) {
         this.source = source;
     }
+
+    @Override
+    public String toString() {
+        return "Arc{" +
+                "constraint=" + constraint +
+                ", target=" + target.getName() +
+                ", source=" + source.getName() +
+                '}';
+    }
 }

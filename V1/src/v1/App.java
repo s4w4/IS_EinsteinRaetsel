@@ -5,144 +5,77 @@ import java.util.List;
 import static v1.VariablenCommon.*;
 
 public class App {
-    public static void main(String[] args) {
 
+    private static final List<String> nationalitaetenList = new ArrayList<>();
+    private static final List<String> getraenkeList = new ArrayList<>();
+    private static final List<String> farbenList = new ArrayList<>();
+    private static final List<String> zigarettenList = new ArrayList<>();
+    private static final List<String> tiereList = new ArrayList<>();
+    private static final List<String> variablenList = new ArrayList<>();
+
+    public static void main(String[] args) {
+        createVariable();
         createVertex();
         createConstraints();
         // TODO: sortieren Vertex!!!
 
     }
 
+    private static void createVariable() {
+        nationalitaetenList.add(NATIONALITAET_NORWEGE);
+        nationalitaetenList.add(NATIONALITAET_BRITE);
+        nationalitaetenList.add(NATIONALITAET_DEUTSCHE);
+        nationalitaetenList.add(NATIONALITAET_SCHWEDE);
+        nationalitaetenList.add(NATIONALITAET_DAENE);
+        variablenList.addAll(nationalitaetenList);
+
+        getraenkeList.add(GETRAENK_MILCH);
+        getraenkeList.add(GETRAENK_TEE);
+        getraenkeList.add(GETRAENK_KAFFEE);
+        getraenkeList.add(GETRAENK_WASSER);
+        getraenkeList.add(GETRAENK_BIER);
+        variablenList.addAll(getraenkeList);
+
+        farbenList.add(FARBEN_ROT);
+        farbenList.add(FARBEN_BLAU);
+        farbenList.add(FARBEN_GELB);
+        farbenList.add(FARBEN_GRUEN);
+        farbenList.add(FARBEN_WEISS);
+        variablenList.addAll(farbenList);
+
+        zigarettenList.add(ZIGARETTEN_PALLMALL);
+        zigarettenList.add(ZIGARETTEN_MARLBORO);
+        zigarettenList.add(ZIGARETTEN_ROTHMANNS);
+        zigarettenList.add(ZIGARETTEN_DUNHILL);
+        zigarettenList.add(ZIGARETTEN_WINFIELD);
+        variablenList.addAll(zigarettenList);
+
+        tiereList.add(TIERE_HUND);
+        tiereList.add(TIERE_KATZE);
+        tiereList.add(TIERE_PFERD);
+        tiereList.add(TIERE_VOGEL);
+        tiereList.add(TIERE_FISCH);
+        variablenList.addAll(tiereList);
+    }
+
+    private static void addConstraints(List<String> list, Constraint constraint){
+        for(int i = 0; i < list.size(); i++) {
+            for (int j = 0; j < list.size(); j++) {
+                if (i != j){
+                    ConstraintNetz.addConstraint(list.get(i),list.get(j),constraint);
+                }
+            }
+        }
+    }
+
     private static void createConstraints() {
-        // Nationalitäten
-        ConstraintNetz.addConstraint(NATIONALITAET_BRITE,NATIONALITAET_DEUTSCHE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_BRITE,NATIONALITAET_DAENE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_BRITE,NATIONALITAET_NORWEGE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_BRITE,NATIONALITAET_SCHWEDE,Constraint.NOT_EQUALS);
 
-        ConstraintNetz.addConstraint(NATIONALITAET_DEUTSCHE,NATIONALITAET_BRITE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_DEUTSCHE,NATIONALITAET_DAENE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_DEUTSCHE,NATIONALITAET_NORWEGE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_DEUTSCHE,NATIONALITAET_SCHWEDE,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(NATIONALITAET_DAENE,NATIONALITAET_BRITE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_DAENE,NATIONALITAET_DEUTSCHE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_DAENE,NATIONALITAET_NORWEGE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_DAENE,NATIONALITAET_SCHWEDE,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(NATIONALITAET_NORWEGE,NATIONALITAET_BRITE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_NORWEGE,NATIONALITAET_DAENE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_NORWEGE,NATIONALITAET_DEUTSCHE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_NORWEGE,NATIONALITAET_SCHWEDE,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(NATIONALITAET_SCHWEDE,NATIONALITAET_BRITE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_SCHWEDE,NATIONALITAET_DAENE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_SCHWEDE,NATIONALITAET_NORWEGE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(NATIONALITAET_SCHWEDE,NATIONALITAET_DEUTSCHE,Constraint.NOT_EQUALS);
-
-        // Getraenke
-        ConstraintNetz.addConstraint(GETRAENK_BIER,GETRAENK_KAFFEE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_BIER,GETRAENK_MILCH,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_BIER,GETRAENK_TEE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_BIER,GETRAENK_WASSER,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(GETRAENK_KAFFEE,GETRAENK_BIER,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_KAFFEE,GETRAENK_MILCH,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_KAFFEE,GETRAENK_TEE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_KAFFEE,GETRAENK_WASSER,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(GETRAENK_MILCH,GETRAENK_KAFFEE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_MILCH,GETRAENK_BIER,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_MILCH,GETRAENK_TEE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_MILCH,GETRAENK_WASSER,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(GETRAENK_TEE,GETRAENK_KAFFEE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_TEE,GETRAENK_MILCH,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_TEE,GETRAENK_BIER,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_TEE,GETRAENK_WASSER,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(GETRAENK_WASSER,GETRAENK_KAFFEE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_WASSER,GETRAENK_MILCH,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_WASSER,GETRAENK_TEE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(GETRAENK_WASSER,GETRAENK_BIER,Constraint.NOT_EQUALS);
-
-        // Farben
-        ConstraintNetz.addConstraint(FARBEN_GELB,FARBEN_GRUEN,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_GELB,FARBEN_BLAU,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_GELB,FARBEN_ROT,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_GELB,FARBEN_WEISS,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(FARBEN_GRUEN,FARBEN_GELB,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_GRUEN,FARBEN_BLAU,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_GRUEN,FARBEN_ROT,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_GRUEN,FARBEN_WEISS,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(FARBEN_BLAU,FARBEN_GRUEN,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_BLAU,FARBEN_GELB,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_BLAU,FARBEN_ROT,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_BLAU,FARBEN_WEISS,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(FARBEN_ROT,FARBEN_GRUEN,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_ROT,FARBEN_GELB,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_ROT,FARBEN_BLAU,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_ROT,FARBEN_WEISS,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(FARBEN_WEISS,FARBEN_GRUEN,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_WEISS,FARBEN_GELB,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_WEISS,FARBEN_ROT,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(FARBEN_WEISS,FARBEN_BLAU,Constraint.NOT_EQUALS);
-
-        // Zigaretten
-        ConstraintNetz.addConstraint(ZIGARETTEN_DUNHILL,ZIGARETTEN_MARLBORO,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_DUNHILL,ZIGARETTEN_PALLMALL,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_DUNHILL,ZIGARETTEN_ROTHMANNS,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_DUNHILL,ZIGARETTEN_WINFIELD,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(ZIGARETTEN_MARLBORO,ZIGARETTEN_DUNHILL,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_MARLBORO,ZIGARETTEN_PALLMALL,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_MARLBORO,ZIGARETTEN_ROTHMANNS,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_MARLBORO,ZIGARETTEN_WINFIELD,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(ZIGARETTEN_PALLMALL,ZIGARETTEN_MARLBORO,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_PALLMALL,ZIGARETTEN_DUNHILL,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_PALLMALL,ZIGARETTEN_ROTHMANNS,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_PALLMALL,ZIGARETTEN_WINFIELD,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(ZIGARETTEN_ROTHMANNS,ZIGARETTEN_MARLBORO,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_ROTHMANNS,ZIGARETTEN_PALLMALL,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_ROTHMANNS,ZIGARETTEN_DUNHILL,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_ROTHMANNS,ZIGARETTEN_WINFIELD,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(ZIGARETTEN_WINFIELD,ZIGARETTEN_MARLBORO,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_WINFIELD,ZIGARETTEN_PALLMALL,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_WINFIELD,ZIGARETTEN_ROTHMANNS,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(ZIGARETTEN_WINFIELD,ZIGARETTEN_DUNHILL,Constraint.NOT_EQUALS);
-
-        // Tiere
-        ConstraintNetz.addConstraint(TIERE_FISCH,TIERE_HUND,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_FISCH,TIERE_KATZE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_FISCH,TIERE_PFERD,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_FISCH,TIERE_VOGEL,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(TIERE_HUND,TIERE_FISCH,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_HUND,TIERE_KATZE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_HUND,TIERE_PFERD,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_HUND,TIERE_VOGEL,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(TIERE_KATZE,TIERE_HUND,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_KATZE,TIERE_FISCH,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_KATZE,TIERE_PFERD,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_KATZE,TIERE_VOGEL,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(TIERE_PFERD,TIERE_HUND,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_PFERD,TIERE_KATZE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_PFERD,TIERE_FISCH,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_PFERD,TIERE_VOGEL,Constraint.NOT_EQUALS);
-
-        ConstraintNetz.addConstraint(TIERE_VOGEL,TIERE_HUND,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_VOGEL,TIERE_KATZE,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_VOGEL,TIERE_PFERD,Constraint.NOT_EQUALS);
-        ConstraintNetz.addConstraint(TIERE_VOGEL,TIERE_FISCH,Constraint.NOT_EQUALS);
+        // ALL-Different
+        addConstraints(nationalitaetenList, Constraint.NOT_EQUALS);
+        addConstraints(getraenkeList, Constraint.NOT_EQUALS);
+        addConstraints(farbenList, Constraint.NOT_EQUALS);
+        addConstraints(zigarettenList, Constraint.NOT_EQUALS);
+        addConstraints(tiereList, Constraint.NOT_EQUALS);
 
         // 1. Der Brite lebt im roten Haus
         ConstraintNetz.addConstraint(NATIONALITAET_BRITE,FARBEN_ROT,Constraint.EQUALS);
@@ -212,36 +145,21 @@ public class App {
         werteBereich.add(5);
 
         ConstraintNetz.initValueRange(werteBereich);
-        // Nationalitäten
-        ConstraintNetz.addVertex(NATIONALITAET_NORWEGE, new ArrayList<Integer>(1));       // Norwege wohnt im ersten Haus!!!
-        ConstraintNetz.addVertex(NATIONALITAET_BRITE);
-        ConstraintNetz.addVertex(NATIONALITAET_DEUTSCHE);
-        ConstraintNetz.addVertex(NATIONALITAET_SCHWEDE);
-        ConstraintNetz.addVertex(NATIONALITAET_DAENE);
-        // Getränke
-        ConstraintNetz.addVertex(GETRAENK_MILCH, new ArrayList<Integer>(3));         // Person im 3ten Haus trinkt Milch
-        ConstraintNetz.addVertex(GETRAENK_TEE);
-        ConstraintNetz.addVertex(GETRAENK_KAFFEE);
-        ConstraintNetz.addVertex(GETRAENK_WASSER);
-        ConstraintNetz.addVertex(GETRAENK_BIER);
-        // Farben
-        ConstraintNetz.addVertex(FARBEN_ROT);
-        ConstraintNetz.addVertex(FARBEN_BLAU);
-        ConstraintNetz.addVertex(FARBEN_GELB);
-        ConstraintNetz.addVertex(FARBEN_GRUEN);
-        ConstraintNetz.addVertex(FARBEN_WEISS);
-        // Zigaretten
-        ConstraintNetz.addVertex(ZIGARETTEN_PALLMALL);
-        ConstraintNetz.addVertex(ZIGARETTEN_MARLBORO);
-        ConstraintNetz.addVertex(ZIGARETTEN_ROTHMANNS);
-        ConstraintNetz.addVertex(ZIGARETTEN_DUNHILL);
-        ConstraintNetz.addVertex(ZIGARETTEN_WINFIELD);
-        // Tiere
-        ConstraintNetz.addVertex(TIERE_HUND);
-        ConstraintNetz.addVertex(TIERE_KATZE);
-        ConstraintNetz.addVertex(TIERE_PFERD);
-        ConstraintNetz.addVertex(TIERE_VOGEL);
-        ConstraintNetz.addVertex(TIERE_FISCH);
+
+        for(String elem : variablenList){
+            if (elem.equals(NATIONALITAET_NORWEGE)) {
+                List<Integer> l1 = new ArrayList<>();
+                l1.add(1);
+                ConstraintNetz.addVertex(elem, l1); // 9. Der Norweger lebt im ersten Haus.
+            }
+            else if (elem.equals(GETRAENK_MILCH)) {
+                List<Integer> l2 = new ArrayList<>();
+                l2.add(3);
+                ConstraintNetz.addVertex(elem, l2); // 7. Der Mann im mittleren Haus trinkt Milch.
+            }
+            else ConstraintNetz.addVertex(elem);
+        }
+
     }
 
     private static void testConstraints() {

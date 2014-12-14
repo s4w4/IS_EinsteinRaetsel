@@ -24,7 +24,7 @@ public class ConstraintNetz {
         valueRange.addAll(values);
     }
 
-    public Map<String, Vertex> getVertexHashMap() {
+    public static Map<String, Vertex> getVertexHashMap() {
         return vertexHashMap;
     }
 
