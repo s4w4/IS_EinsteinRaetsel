@@ -5,7 +5,8 @@ public enum Constraint {
     NOT_EQUALS,
     NEIGHBARS,
     LEFT_NEIGHBAR,
-    RIGHT_NEIGHBAR;
+    RIGHT_NEIGHBAR,
+    NOTHING;
 
     private Constraint constraint;
 

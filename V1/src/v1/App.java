@@ -2,26 +2,68 @@ package v1;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import static v1.VariablenCommon.*;
 
 public class App {
 
-    private static final List<String> nationalitaetenList = new ArrayList<>();
-    private static final List<String> getraenkeList = new ArrayList<>();
+     private static final List<String> nationalitaetenList = new ArrayList<>();
+     private static final List<String> getraenkeList = new ArrayList<>();
     private static final List<String> farbenList = new ArrayList<>();
-    private static final List<String> zigarettenList = new ArrayList<>();
-    private static final List<String> tiereList = new ArrayList<>();
-    private static final List<String> variablenList = new ArrayList<>();
+     private static final List<String> zigarettenList = new ArrayList<>();
+     private static final List<String> tiereList = new ArrayList<>();
+     private static final List<String> variablenList = new ArrayList<>();
 
     public static void main(String[] args) {
         createVariable();
         createVertex();
         createConstraints();
         // TODO: sortieren Vertex!!!
+        // TODO: starten
 
+
+        ConstraintNetz.ausgabe();
+
+        runde(NATIONALITAET_NORWEGE, 0);
+         runde(GETRAENK_MILCH, 0);
+
+        runde(GETRAENK_WASSER, 0);
+        runde(FARBEN_GELB, 0);
+        runde(TIERE_KATZE, 0);
+        runde(ZIGARETTEN_DUNHILL, 0);
+
+        runde(NATIONALITAET_DAENE, 0);
+        runde(GETRAENK_TEE, 0);
+        runde(FARBEN_BLAU, 0);
+        runde(TIERE_PFERD, 0);
+        runde(ZIGARETTEN_MARLBORO, 0);
+
+        runde(NATIONALITAET_BRITE, 0);
+        runde(FARBEN_ROT, 0);
+        runde(TIERE_VOGEL, 0);
+        runde(ZIGARETTEN_PALLMALL, 0);
+
+        runde(NATIONALITAET_DEUTSCHE, 0);
+        runde(GETRAENK_KAFFEE, 0);
+        runde(FARBEN_GRUEN, 0);
+        runde(TIERE_FISCH, 0);
+        runde(ZIGARETTEN_ROTHMANNS, 0);
+
+        ConstraintNetz.ausgabe();
+    }
+
+    private static void runde(String name, int index) {
+        int value = ConstraintNetz.getVertexHashMap().get(name).getValueRange().get(index);
+        Vertex v1 = ConstraintNetz.getVertexHashMap().get(name);
+        v1.setInitial(true);
+        List<Integer> vr = new ArrayList<>();
+        vr.add(value);
+        v1.setValueRange(vr);
+        AC3FullLookahead.start(v1);
     }
 
     private static void createVariable() {
+
         nationalitaetenList.add(NATIONALITAET_NORWEGE);
         nationalitaetenList.add(NATIONALITAET_BRITE);
         nationalitaetenList.add(NATIONALITAET_DEUTSCHE);
@@ -56,6 +98,7 @@ public class App {
         tiereList.add(TIERE_VOGEL);
         tiereList.add(TIERE_FISCH);
         variablenList.addAll(tiereList);
+
     }
 
     private static void addConstraints(List<String> list, Constraint constraint){
@@ -71,11 +114,12 @@ public class App {
     private static void createConstraints() {
 
         // ALL-Different
-        addConstraints(nationalitaetenList, Constraint.NOT_EQUALS);
-        addConstraints(getraenkeList, Constraint.NOT_EQUALS);
+         addConstraints(nationalitaetenList, Constraint.NOT_EQUALS);
+         addConstraints(getraenkeList, Constraint.NOT_EQUALS);
         addConstraints(farbenList, Constraint.NOT_EQUALS);
-        addConstraints(zigarettenList, Constraint.NOT_EQUALS);
-        addConstraints(tiereList, Constraint.NOT_EQUALS);
+         addConstraints(zigarettenList, Constraint.NOT_EQUALS);
+         addConstraints(tiereList, Constraint.NOT_EQUALS);
+
 
         // 1. Der Brite lebt im roten Haus
         ConstraintNetz.addConstraint(NATIONALITAET_BRITE,FARBEN_ROT,Constraint.EQUALS);

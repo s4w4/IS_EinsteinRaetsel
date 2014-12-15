@@ -1,15 +1,12 @@
 package v1;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ConstraintNetz {
 
     private static final Map<String, Vertex> vertexHashMap = new HashMap<>();
     private static final List<Integer> valueRange = new ArrayList<>();
-    private static final List<Arc> constraintList = new ArrayList<>();
+    private static final Map<String, Arc> constraintMap = new HashMap();
 
 
     public static void addVertex(String name){
@@ -28,13 +25,64 @@ public class ConstraintNetz {
         return vertexHashMap;
     }
 
-    public static List<Arc> getConstraintList() {
-        return constraintList;
+    public static Map<String, Arc> getConstraintMap() {
+        return constraintMap;
     }
 
     public static void addConstraint(String v1, String v2, Constraint constraint) throws NullPointerException{
         if (vertexHashMap.get(v1) == null || vertexHashMap.get(v2) == null) throw new NullPointerException();
 
-        constraintList.add(new Arc(vertexHashMap.get(v1),vertexHashMap.get(v2), constraint));
+        String key = vertexHashMap.get(v1).getName()+"_"+vertexHashMap.get(v2).getName();
+        constraintMap.put(key, new Arc(vertexHashMap.get(v1),vertexHashMap.get(v2), constraint));
+    }
+
+    public static Constraint getConstraint(Vertex vi, Vertex vj ) {
+
+          String key = vi.getName()+"_"+vj.getName();
+         return constraintMap.get(key).getConstraint();
+    }
+
+    public static List<Arc> getAllArcsFromTarget(Vertex cv) {
+        List<Arc> resultList = new ArrayList<>();
+
+        Set<String > keysConstraint = constraintMap.keySet();
+        for (String key : keysConstraint){
+            Vertex target = constraintMap.get(key).getTarget();
+            if (target.getName().equals(cv.getName())){
+                resultList.add(constraintMap.get(key));
+            }
+        }
+        return resultList;
+    }
+
+    public static List<Arc> getAllArcsFromTarget(Vertex v, List<Arc> arcList) {
+        List<Arc> resultList = new ArrayList<>();
+        for (Arc arc: arcList){
+            Vertex source = arc.getSource();
+            Vertex target = arc.getTarget();
+            Vertex[] key = {source, target};
+            if (target.getName().equals(v.getName()) && !source.isInitial()){
+                resultList.add(constraintMap.get(key));
+            }
+        }
+        return resultList;
+    }
+
+    public static void ausgabe() {
+        Set<String> keys = vertexHashMap.keySet();
+        System.out.println("---------------------------------------------");
+        for (String key : keys){
+            System.out.println(vertexHashMap.get(key).getName()+"                       >  "+vertexHashMap.get(key).getValueRange());
+        }
+    }
+
+    public static void updateArcs(List<Arc> arcList) {
+        for (Arc arc : arcList){
+            Vertex source = arc.getSource();
+            Vertex target = arc.getTarget();
+            String key = source.getName()+"_"+target.getName();
+            constraintMap.get(key).setSource(source);
+            constraintMap.get(key).setTarget(target);
+        }
     }
 }
