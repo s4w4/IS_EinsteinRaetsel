@@ -1,23 +1,34 @@
 package constraintSolver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Arc {
 
-    private BinaryConstraint constraint;
+    private List<BinaryConstraint> constraintList;
     private Vertex target;
     private Vertex source;
 
     public Arc(Vertex source, Vertex target, BinaryConstraint constraint) {
         this.source = source;
         this.target = target;
-        this.constraint = constraint;
+        this.constraintList = new ArrayList<>();
+        this.constraintList.add(constraint);
     }
 
-    public BinaryConstraint getConstraint() {
-        return constraint;
+    public Arc(Vertex source, Vertex target, List<BinaryConstraint> constraintList) {
+        this.source = source;
+        this.target = target;
+        this.constraintList = constraintList;
     }
 
-    public void setConstraint(BinaryConstraint constraint) {
-        this.constraint = constraint;
+
+    public List<BinaryConstraint> getConstraintList() {
+        return constraintList;
+    }
+
+    public void setConstraintList(List<BinaryConstraint> constraintList) {
+        this.constraintList = constraintList;
     }
 
     public Vertex getTarget() {
@@ -41,7 +52,7 @@ public class Arc {
         return "\nArc{" +
                 "source: " + source +
                 ", target: " + target +
-                ", constraint: " + constraint +
+                ", constraintList: " + constraintList +
                 "}";
     }
 }

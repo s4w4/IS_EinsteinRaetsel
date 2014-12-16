@@ -1,21 +1,29 @@
 package constraintSolver;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SelfLoop {
 
-    private UnaryConstraint constraint;
+    private List<UnaryConstraint> constraintList;
     private Vertex vertex;
 
     public SelfLoop(Vertex vertex, UnaryConstraint constraint) {
         this.vertex = vertex;
-        this.constraint = constraint;
+        this.constraintList = new ArrayList<>();
+        this.constraintList.add(constraint);
     }
 
-    public UnaryConstraint getConstraint() {
-        return constraint;
+    public SelfLoop(Vertex vertex, List<UnaryConstraint> constraintList) {
+        this.vertex = vertex;
+        this.constraintList = constraintList;
+    }
+    public List<UnaryConstraint> getConstraintList() {
+        return constraintList;
     }
 
-    public void setConstraint(UnaryConstraint constraint) {
-        this.constraint = constraint;
+    public void setConstraintList(List<UnaryConstraint> constraintList) {
+        this.constraintList = constraintList;
     }
 
     public Vertex getVertex() {
@@ -31,7 +39,7 @@ public class SelfLoop {
     public String toString() {
         return "\nSelfLoop{" +
                 "vertex: " + vertex +
-                ", constraint: " + constraint +
+                ", constraintList: " + constraintList +
                 "}";
     }
 }

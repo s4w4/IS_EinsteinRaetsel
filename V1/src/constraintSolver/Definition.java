@@ -29,4 +29,22 @@ public class Definition {
     public String toString() {
         return definitionList.toString();
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Definition that = (Definition) o;
+
+        if (definitionList != null ? !definitionList.equals(that.definitionList) : that.definitionList != null)
+            return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return definitionList != null ? definitionList.hashCode() : 0;
+    }
 }
