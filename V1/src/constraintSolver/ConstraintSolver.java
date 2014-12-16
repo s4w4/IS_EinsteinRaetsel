@@ -1,11 +1,12 @@
 package constraintSolver;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import entities.Constraint;
 import entities.Definition;
 import entities.SelfLoop;
 import entities.Vertex;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ConstraintSolver {
 
@@ -28,9 +29,12 @@ public class ConstraintSolver {
             Vertex v = selfLoop.getVertex();
             Definition d = v.getDefinitionRange();
             for (Object x : d.getDefinitionList()){
-                if(!selfLoop.getConstraint().isConsistent(x)){
-                    deleteList.add(x);
+                for (Constraint constraint : selfLoop.getConstraintList()){
+                    if(!constraint.isConsistent(x)){
+                        deleteList.add(x);
+                    }
                 }
+
             }
             d.getDefinitionList().removeAll(deleteList);
         }
