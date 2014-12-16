@@ -16,7 +16,16 @@ public class AppTest {
     public static void main(String[] args){
         test1();
     }
-
+    
+    
+    
+/*
+ * 
+ * 
+ *      (X)   -------[<]------- (Y)
+ * 		{1,2,3,4,5,15,100}				{1,2,3,4,5}
+ * 		x<20
+ */
     private static void test1() {
         /**
          * Definitionsbereich erstellen
@@ -27,6 +36,8 @@ public class AppTest {
         dX.addValue(3);
         dX.addValue(4);
         dX.addValue(5);
+        dX.addValue(15);
+        dX.addValue(100);
 
         Definition dY = new Definition();
         dY.addValue(1);
@@ -50,7 +61,7 @@ public class AppTest {
          */
         BinaryConstraint constraintLesserThan = new ConstraintLesserThan();
         BinaryConstraint constraintGreaterEqual = new ConstraintGreaterEqual();
-        UnaryConstraint constraintLesserThanFour = new ConstraintLesserThanValue(2);
+        UnaryConstraint constraintLesserThanFour = new ConstraintLesserThanValue(20);
 
 
         /**
@@ -76,12 +87,20 @@ public class AppTest {
         System.out.println("ArcList     : "+arcList);
         System.out.println("SelfLoopList: "+selfLoopList);
         System.out.println();
-
+        System.out.println("***************Knotenkonsistenz**************");
         ConstraintSolver.nc(selfLoopList);
         System.out.println("VertexList  : "+vertexList);
         System.out.println("ArcList     : "+arcList);
         System.out.println("SelfLoopList: "+selfLoopList);
         System.out.println();
+        System.out.println("***************Kantenkonsistenz**************");
+        ConstraintSolver.revise(x,y,arcXY);
+        ConstraintSolver.revise(y,x,arcYX);
+        System.out.println("VertexList  : "+vertexList);
+        System.out.println("ArcList     : "+arcList);
+        System.out.println("SelfLoopList: "+selfLoopList);
+        System.out.println();
+        System.out.println("*********************************************");
 
 
     }
