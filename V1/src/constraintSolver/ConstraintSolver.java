@@ -9,7 +9,7 @@ public class ConstraintSolver {
 
 
     /**
-     * Algorithmus NC zur Knotenkonsistenz
+     * Algorithmus NC zur Knotenkonsistenz (Folie 49)
      *
      * Es wird nur Ã¼ber die Schlingen iteriert
      * Bei jedem Knoten wird jedes Element aus dem Definitionsbereich
@@ -38,7 +38,14 @@ public class ConstraintSolver {
     }
     
     
-    
+    /**
+     * Algorithmus NC zur Kantenkonsistenz (Folie 50)
+     * 
+     * @param vi
+     * @param vj
+     * @param arc
+     * @return
+     */
     public static boolean revise(Vertex vi, Vertex vj, Arc arc){
         List<Object> deleteList = new ArrayList<>();
     	boolean delete = false; 
@@ -66,7 +73,16 @@ public class ConstraintSolver {
     }
 
 
-
+	/***
+	 * Hilfsfunktion
+	 * Geht ueber alle binary Constraints durch und
+	 * prüft, ob x und y consistent sind
+	 * 
+	 * @param x
+	 * @param y
+	 * @param arc
+	 * @return
+	 */
 	private static boolean isConsistent(Object x, Object y, Arc arc) {
 		boolean isConsistent = true; 
     	//Alle Constraints von vi und vj 
@@ -80,6 +96,13 @@ public class ConstraintSolver {
 	}
 
 
+	/***
+	 * Algorithums AC-3 for Look-Ahead
+	 * 
+	 * @param cv
+	 * @param arcList
+	 * @return
+	 */
     public static boolean ac3la(Vertex cv, List<Arc> arcList) {
         List<Arc> q = getArcs(cv, arcList);
         boolean consistent = true;
