@@ -1,6 +1,6 @@
 package einsteinApp;
 
-import constraintSolver.ConstraintSolverAlgorithmus;
+import constraintSolver.ConstraintSolver;
 import einsteinApp.constraints.ConstraintNotEqual;
 import entities.Arc;
 import entities.BinaryConstraint;
@@ -41,7 +41,7 @@ public class TestApp {
         arcList.add(arc2);
 
         System.out.println(arcList);
-        ConstraintSolverAlgorithmus.ac3la(v2, arcList);
+        ConstraintSolver.ac3la(v2, arcList);
         System.out.println();
         System.out.println(arcList);
 
