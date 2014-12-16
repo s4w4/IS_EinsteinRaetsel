@@ -76,7 +76,7 @@ public class ConstraintSolver {
 	/***
 	 * Hilfsfunktion
 	 * Geht ueber alle binary Constraints durch und
-	 * prüft, ob x und y consistent sind
+	 * prï¿½ft, ob x und y consistent sind
 	 * 
 	 * @param x
 	 * @param y
@@ -112,7 +112,7 @@ public class ConstraintSolver {
             Vertex vm = arcVkVm.getTarget();
             if (revise(vk, vm, arcVkVm)) {
                 unionQ(vk, vm, cv, q, arcList);
-                consistent = vk.getDefinitionRange().getDefinitionList().isEmpty();
+                consistent = !vk.getDefinitionRange().getDefinitionList().isEmpty();
             }
         }
         return consistent;
