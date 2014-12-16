@@ -1,12 +1,7 @@
 package v1;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import static v1.VariablenCommon.*;
-
 public class App {
-
+/*
      private static final List<String> nationalitaetenList = new ArrayList<>();
      private static final List<String> getraenkeList = new ArrayList<>();
     private static final List<String> farbenList = new ArrayList<>();
@@ -18,7 +13,7 @@ public class App {
         createVariable();
         createVertex();
         createConstraints();
-        // TODO: sortieren Vertex!!!
+        // TODO: sortieren v2.Vertex!!!
         // TODO: starten
 
 
@@ -53,17 +48,18 @@ public class App {
     }
 
     private static void runde(String name, int index) {
-        int value = ConstraintNetz.getVertexHashMap().get(name).getValueRange().get(index);
+         int value = ConstraintNetz.getVertexHashMap().get(name).getValueRange().get(index);
         Vertex v1 = ConstraintNetz.getVertexHashMap().get(name);
         v1.setInitial(true);
         List<Integer> vr = new ArrayList<>();
         vr.add(value);
         v1.setValueRange(vr);
         AC3FullLookahead.start(v1);
+
     }
-
+*/
     private static void createVariable() {
-
+/*
         nationalitaetenList.add(NATIONALITAET_NORWEGE);
         nationalitaetenList.add(NATIONALITAET_BRITE);
         nationalitaetenList.add(NATIONALITAET_DEUTSCHE);
@@ -98,9 +94,9 @@ public class App {
         tiereList.add(TIERE_VOGEL);
         tiereList.add(TIERE_FISCH);
         variablenList.addAll(tiereList);
-
+*/
     }
-
+/*
     private static void addConstraints(List<String> list, Constraint constraint){
         for(int i = 0; i < list.size(); i++) {
             for (int j = 0; j < list.size(); j++) {
@@ -230,5 +226,5 @@ public class App {
         System.out.println("RIGHT_NEIGHBAR: 2 rechts neben 2 -> (false) " + Constraint.RIGHT_NEIGHBAR.isConstant(2, 2));
         System.out.println("RIGHT_NEIGHBAR: 3 rechts neben 1 -> (false) " + Constraint.RIGHT_NEIGHBAR.isConstant(3, 1));
 
-    }
+    }*/
 }

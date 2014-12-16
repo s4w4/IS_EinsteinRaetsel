@@ -1,4 +1,6 @@
-public class ConstraintNotEqual extends Constraint{
+package v2;
+
+public class ConstraintNotEqual extends Constraint {
 
     @Override
     public boolean isConsistent(int x, int y) {

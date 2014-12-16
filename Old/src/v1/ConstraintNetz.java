@@ -1,7 +1,5 @@
 package v1;
 
-import java.util.*;
-
 public class ConstraintNetz {
 
     private static final Map<String, Vertex> vertexHashMap = new HashMap<>();

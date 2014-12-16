@@ -1,3 +1,5 @@
+package v2;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -28,7 +30,7 @@ public class EinsteinRaetsel {
 
 
     public static void main(String[] args){
-        //new EinsteinRaetsel();
+        //new v2.EinsteinRaetsel();
 
         Set<Integer> s1 = new HashSet<Integer>();
         s1.add(1);
