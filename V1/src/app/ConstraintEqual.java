@@ -1,6 +1,6 @@
 package app;
 
-import constraintSolver.BinaryConstraint;
+import entities.BinaryConstraint;
 
 public class ConstraintEqual implements BinaryConstraint {
 

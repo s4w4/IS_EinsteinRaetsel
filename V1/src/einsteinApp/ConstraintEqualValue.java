@@ -1,8 +1,8 @@
 package einsteinApp;
 
-import constraintSolver.UnaryConstraint;
-
 import java.util.List;
+
+import entities.UnaryConstraint;
 
 public class ConstraintEqualValue implements UnaryConstraint {
 

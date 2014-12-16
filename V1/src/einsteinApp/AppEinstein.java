@@ -5,6 +5,13 @@ import constraintSolver.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import entities.Arc;
+import entities.BinaryConstraint;
+import entities.Definition;
+import entities.SelfLoop;
+import entities.UnaryConstraint;
+import entities.Vertex;
+
 public class AppEinstein {
     public static void main(String[] args) {
         /**

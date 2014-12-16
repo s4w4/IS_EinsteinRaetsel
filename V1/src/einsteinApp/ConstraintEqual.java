@@ -1,8 +1,8 @@
 package einsteinApp;
 
-import constraintSolver.BinaryConstraint;
-
 import java.util.List;
+
+import entities.BinaryConstraint;
 
 public class ConstraintEqual implements BinaryConstraint{
 

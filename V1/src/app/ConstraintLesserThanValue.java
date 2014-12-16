@@ -1,6 +1,6 @@
 package app;
 
-import constraintSolver.UnaryConstraint;
+import entities.UnaryConstraint;
 
 public class ConstraintLesserThanValue implements UnaryConstraint {
 

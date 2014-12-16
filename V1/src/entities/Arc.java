@@ -1,4 +1,4 @@
-package constraintSolver;
+package entities;
 
 public class Arc {
 
