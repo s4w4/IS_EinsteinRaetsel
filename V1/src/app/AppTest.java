@@ -1,16 +1,10 @@
 package app;
 
-import constraintSolver.*;
+import constraintSolver.ConstraintNet;
+import entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import entities.Arc;
-import entities.BinaryConstraint;
-import entities.Definition;
-import entities.SelfLoop;
-import entities.UnaryConstraint;
-import entities.Vertex;
 
 public class AppTest {
     public static void main(String[] args){
@@ -77,7 +71,7 @@ public class AppTest {
         System.out.println("SelfLoopList: "+selfLoopList);
         System.out.println();
 
-        ConstraintSolver.nc(selfLoopList);
+        //ConstraintSolver.nc(selfLoopList);
         System.out.println("VertexList  : "+vertexList);
         System.out.println("ArcList     : "+arcList);
         System.out.println("SelfLoopList: "+selfLoopList);

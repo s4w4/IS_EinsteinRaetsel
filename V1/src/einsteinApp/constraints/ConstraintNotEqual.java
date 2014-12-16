@@ -1,6 +1,7 @@
 package einsteinApp.constraints;
 
-import constraintSolver.BinaryConstraint;
+
+import entities.BinaryConstraint;
 
 public class ConstraintNotEqual implements BinaryConstraint {
     @Override

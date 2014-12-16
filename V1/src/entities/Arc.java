@@ -55,4 +55,27 @@ public class Arc {
                 ", constraintList: " + constraintList +
                 "}";
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Arc arc = (Arc) o;
+
+        if (constraintList != null ? !constraintList.equals(arc.constraintList) : arc.constraintList != null)
+            return false;
+        if (source != null ? !source.equals(arc.source) : arc.source != null) return false;
+        if (target != null ? !target.equals(arc.target) : arc.target != null) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = constraintList != null ? constraintList.hashCode() : 0;
+        result = 31 * result + (target != null ? target.hashCode() : 0);
+        result = 31 * result + (source != null ? source.hashCode() : 0);
+        return result;
+    }
 }

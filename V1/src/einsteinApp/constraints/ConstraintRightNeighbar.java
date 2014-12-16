@@ -1,6 +1,6 @@
 package einsteinApp.constraints;
 
-import constraintSolver.BinaryConstraint;
+import entities.BinaryConstraint;
 
 public class ConstraintRightNeighbar implements BinaryConstraint {
     @Override

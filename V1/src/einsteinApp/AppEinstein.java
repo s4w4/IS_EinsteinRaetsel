@@ -1,7 +1,10 @@
 package einsteinApp;
 
-import constraintSolver.*;
 import einsteinApp.constraints.*;
+import entities.Arc;
+import entities.BinaryConstraint;
+import entities.Definition;
+import entities.Vertex;
 
 import java.util.ArrayList;
 import java.util.List;
