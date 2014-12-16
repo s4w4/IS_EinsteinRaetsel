@@ -3,6 +3,10 @@ package constraintSolver;
 import java.util.ArrayList;
 import java.util.List;
 
+import entities.Definition;
+import entities.SelfLoop;
+import entities.Vertex;
+
 public class ConstraintSolver {
 
 

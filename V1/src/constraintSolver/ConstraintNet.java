@@ -2,6 +2,10 @@ package constraintSolver;
 
 import java.util.List;
 
+import entities.Arc;
+import entities.SelfLoop;
+import entities.Vertex;
+
 public class ConstraintNet {
     private List<Arc> arcList;
     private List<Vertex> vertexList;

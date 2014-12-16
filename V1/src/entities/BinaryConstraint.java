@@ -1,4 +1,4 @@
-package constraintSolver;
+package entities;
 
 public interface BinaryConstraint extends Constraint {
 
