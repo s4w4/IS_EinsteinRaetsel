@@ -28,18 +28,23 @@ public enum Heuristik {
 	DYNAMIC_SEARCH_REARRANGEMENT_HEURISTIK;
 
 	public Map<Integer, Vertex> sort(ConstraintNet constraintNetz) {
-		switch (this) {
+        Map<Integer, Vertex> resultVertexMap = new HashMap<>();
+        List<Vertex> vertexList;
+        switch (this) {
 		case NO_HEURISTIK:
-			System.out.println(">>>NO_HEURISTIK");
-
-			break;
+            vertexList = constraintNetz.getVertexList();
+            for (int i = 0; i < vertexList.size(); i++){
+                vertexList.get(i).setRang(i + 1);
+                resultVertexMap.put(vertexList.get(i).getRang(),vertexList.get(i));
+            }
+            return resultVertexMap;
 
 		case DYNAMIC_SEARCH_REARRANGEMENT_HEURISTIK:
 			/**
 			 * QUICKSORT HIER
 			 */
-			List<Vertex> vertexList = constraintNetz.getVertexList();
-			Map<Integer, Vertex> resultVertexMap = new HashMap<>();
+            vertexList = constraintNetz.getVertexList();
+
             QuickSort quickSort = new QuickSort();
             List<Vertex> sL = quickSort.quicksort(vertexList);
             for (int i = 0; i < sL.size(); i++){

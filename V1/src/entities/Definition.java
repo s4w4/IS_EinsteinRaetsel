@@ -11,7 +11,7 @@ public class Definition {
         this.definitionList = new ArrayList<>();
     }
 
-    public Definition(List<Object> definitionList ){ this.definitionList = new ArrayList<>();}
+    public Definition(List<Object> definitionList ){ this.definitionList = definitionList;}
 
     public void addValue(Object value) {
         definitionList.add(value);
