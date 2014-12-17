@@ -43,6 +43,7 @@ public class Vertex {
         return "\n\tVertex{" +
                 "name='" + name + "\', " +
                 "definitionRange=" + definitionRange +
+                "rang= "+rang+
                 '}';
     }
 

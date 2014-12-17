@@ -1,31 +1,33 @@
 package heuristik;
 
-import java.util.List;
-
 import constraintSolver.ConstraintNet;
 import entities.Vertex;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 public enum Heuristik {
 	/*
-	 * Statische Ordnungsheuristiken für Variablen
+	 * Statische Ordnungsheuristiken fï¿½r Variablen
 	 */
 	// keine
 	NO_HEURISTIK,
-	// Variable mit höchster Wahrscheinlichkeit des Scheiterns zuerst wählen
+	// Variable mit hï¿½chster Wahrscheinlichkeit des Scheiterns zuerst wï¿½hlen
 	FIRST_FAIL_HEURISTIK,
-	// Ähnliche Überlegung: Variable, die an den meisten Constraints beteiligt
+	// ï¿½hnliche ï¿½berlegung: Variable, die an den meisten Constraints beteiligt
 	// ist
 	MAXUMUM_DEGREE_HEURISTIK,
 	// Variable mit den meisten Constraints mit bereits instantiierten Variablen
 	MAXIMUM_CARDINALITY_HEURISTIK,
 	// Reihenfolge der Variablen unterstuetzt Weite des Constraint-Netzes
 	MINIMAL_WIDTH_HEURISTIK,
-	// Es wird immer die Variable als nächste
-	// genommen, die über die kleinste Anzahl möglicher Werte verfügt.
-	// So wird der Lösungsraum maximal beschnitten.
+	// Es wird immer die Variable als nï¿½chste
+	// genommen, die ï¿½ber die kleinste Anzahl mï¿½glicher Werte verfï¿½gt.
+	// So wird der Lï¿½sungsraum maximal beschnitten.
 	DYNAMIC_SEARCH_REARRANGEMENT_HEURISTIK;
 
-	public List<Vertex> sort(ConstraintNet constraintNetz) {
+	public Map<Integer, Vertex> sort(ConstraintNet constraintNetz) {
 		switch (this) {
 		case NO_HEURISTIK:
 			System.out.println(">>>NO_HEURISTIK");
@@ -37,10 +39,16 @@ public enum Heuristik {
 			 * QUICKSORT HIER
 			 */
 			List<Vertex> vertexList = constraintNetz.getVertexList();
-			for (Vertex vertex : vertexList){
-				vertex.getDefinitionRange().getDefinitionList().size(); 
-			}
-			break;
+			Map<Integer, Vertex> resultVertexMap = new HashMap<>();
+            QuickSort quickSort = new QuickSort();
+            List<Vertex> sL = quickSort.quicksort(vertexList);
+            for (int i = 0; i < sL.size(); i++){
+                sL.get(i).setRang(i + 1);
+            }
+            for (Vertex v : vertexList){
+                resultVertexMap.put(v.getRang(),v);
+            }
+            return resultVertexMap;
 
 		default:
 			System.out.println("default");
