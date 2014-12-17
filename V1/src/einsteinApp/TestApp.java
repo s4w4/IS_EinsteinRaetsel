@@ -2,20 +2,23 @@ package einsteinApp;
 
 import app.ConstraintGreaterEqual;
 import app.ConstraintLesserThan;
-import constraintSolver.ConstraintNet;
+import app.ConstraintLesserThanValue;
 import einsteinApp.constraints.ConstraintNotEqual;
 import entities.Arc;
 import entities.BinaryConstraint;
 import entities.Definition;
+import entities.SelfLoop;
+import entities.UnaryConstraint;
 import entities.Vertex;
-import heuristik.Heuristik;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
+
+import constraintSolver.ConstraintNet;
 
 public class TestApp {
-    public static void main(String[] args){
+
+	public static void main(String[] args){
         /**
          * Definitionsbereich erstellen
          */
@@ -25,7 +28,6 @@ public class TestApp {
         Definition dY = new Definition();
         dY.addValue(1);
         dY.addValue(4);
-        dY.addValue(2);
         Definition dZ = new Definition();
         dZ.addValue(5);
         dZ.addValue(6);
@@ -41,6 +43,14 @@ public class TestApp {
         vertexList.add(vX);
         vertexList.add(vY);
         vertexList.add(vZ);
+
+        
+        /**
+         * Unaere Constraints erstellen
+         */
+        UnaryConstraint cXX = new ConstraintLesserThanValue(2);
+        List<UnaryConstraint> cListXX = new ArrayList<>();
+        cListXX.add(cXX); 
 
         /**
          * Binäre Constraints erstellen
@@ -58,6 +68,8 @@ public class TestApp {
         /**
          * Kanten erstellen
          */
+        SelfLoop selfLoopXX = new SelfLoop(vX, cListXX);
+        
         Arc arcXY = new Arc(vX, vY, cListXY);
         Arc arcYX = new Arc(vY, vX, cListXY);
 
@@ -69,40 +81,40 @@ public class TestApp {
         arcList.add(arcYX);
         arcList.add(arcYZ);
         arcList.add(arcZY);
-
-        ConstraintNet cn = new ConstraintNet(vertexList, arcList, null);
+        
+        
 
         /**
          * Sortieren
          */
-        /*
         vX.setRang(1);
         vY.setRang(2);
         vZ.setRang(3);
-
 
         List<Vertex> sortierteVertex = new ArrayList<>();
         sortierteVertex.add(vX);
         sortierteVertex.add(vY);
         sortierteVertex.add(vZ);
-        */
+        
+        List<SelfLoop> selfLoopList = new ArrayList<SelfLoop>();
+        selfLoopList.add(selfLoopXX);
+        
+		ConstraintNet constraintNetz = new ConstraintNet(vertexList, arcList, selfLoopList);
+
+
         /**
          * Starten
          */
         System.out.println(vertexList);
         //ConstraintSolver.ac3la(v1, arcList);
-        //ConstraintSatisfactionProblem csp = new ConstraintSatisfactionProblem();
-        //csp.findSolution(sortierteVertex, arcList);
-
-        Map<Integer, Vertex> newVertexList = Heuristik.DYNAMIC_SEARCH_REARRANGEMENT_HEURISTIK.sort(cn);
+        ConstraintSatisfactionProblem csp = new ConstraintSatisfactionProblem();
+        csp.findSolution(constraintNetz);
 
         /**
          * Ausgabe
          */
         System.out.println();
         System.out.println(vertexList);
-        System.out.println();
-        System.out.println(newVertexList);
 
     }
 }
