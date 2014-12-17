@@ -40,7 +40,7 @@ public class Vertex {
 
     @Override
     public String toString() {
-        return "Vertex{" +
+        return "\n\tVertex{" +
                 "name='" + name + "\', " +
                 "definitionRange=" + definitionRange +
                 '}';
