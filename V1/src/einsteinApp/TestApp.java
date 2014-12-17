@@ -20,7 +20,7 @@ public class TestApp {
         dX.addValue(1);
         dX.addValue(2);
         Definition dY = new Definition();
-        dY.addValue(3);
+        dY.addValue(1);
         dY.addValue(4);
         Definition dZ = new Definition();
         dZ.addValue(5);
@@ -42,8 +42,8 @@ public class TestApp {
          * Binäre Constraints erstellen
          */
         BinaryConstraint cXY = new ConstraintNotEqual();
-        BinaryConstraint cZY = new ConstraintLesserThan();
-        BinaryConstraint cYZ = new ConstraintGreaterEqual();
+        BinaryConstraint cZY = new ConstraintGreaterEqual();
+        BinaryConstraint cYZ = new ConstraintLesserThan();
         List<BinaryConstraint> cListXY = new ArrayList<>();
         cListXY.add(cXY);
         List<BinaryConstraint> cListZY = new ArrayList<>();

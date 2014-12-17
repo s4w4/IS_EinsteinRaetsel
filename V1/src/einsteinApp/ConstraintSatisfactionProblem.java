@@ -25,6 +25,9 @@ public class ConstraintSatisfactionProblem {
             vertex.getDefinitionRange().getDefinitionList().removeAll(defTemp);
             vertex.getDefinitionRange().getDefinitionList().add(defTemp.get(0));
 
+
+            constraintSolver.ac3la(vertex, arcList);
+
             i++;
         }
 
