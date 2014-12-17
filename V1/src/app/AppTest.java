@@ -1,16 +1,11 @@
 package app;
 
-import constraintSolver.*;
+import constraintSolver.ConstraintNet;
+import constraintSolver.ConstraintSolver;
+import entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import entities.Arc;
-import entities.BinaryConstraint;
-import entities.Definition;
-import entities.SelfLoop;
-import entities.UnaryConstraint;
-import entities.Vertex;
 
 public class AppTest {
     public static void main(String[] args){
@@ -82,20 +77,21 @@ public class AppTest {
         /**
          * ConstraintNetz erstellen
          */
+        ConstraintSolver constraintSolver = new ConstraintSolver();
         ConstraintNet constraintNetz = new ConstraintNet(vertexList, arcList, selfLoopList);
         System.out.println("VertexList  : "+vertexList);
         System.out.println("ArcList     : "+arcList);
         System.out.println("SelfLoopList: "+selfLoopList);
         System.out.println();
         System.out.println("***************Knotenkonsistenz**************");
-        ConstraintSolver.nc(selfLoopList);
+        constraintSolver.nc(selfLoopList);
         System.out.println("VertexList  : "+vertexList);
         System.out.println("ArcList     : "+arcList);
         System.out.println("SelfLoopList: "+selfLoopList);
         System.out.println();
         System.out.println("***************Kantenkonsistenz**************");
-        ConstraintSolver.revise(x,y,arcXY);
-        ConstraintSolver.revise(y,x,arcYX);
+        constraintSolver.revise(x,y,arcXY);
+        constraintSolver.revise(y,x,arcYX);
         System.out.println("VertexList  : "+vertexList);
         System.out.println("ArcList     : "+arcList);
         System.out.println("SelfLoopList: "+selfLoopList);
