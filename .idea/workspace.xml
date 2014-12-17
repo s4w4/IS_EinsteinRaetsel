@@ -1,10 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6d11c6e5-f525-48a6-b494-84aef0d29291" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/V1/src/constraintSolver/ConstraintSolver.java" />
-      <change type="DELETED" beforePath="C:\Users\Alex\Documents\GitHub\IS_EinsteinRaetsel\V1\src\constraintSolver\ConstraintSolverAlgorithmus.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/app/AppTest.java" afterPath="$PROJECT_DIR$/V1/src/app/AppTest.java" />
+    <list default="true" id="6d11c6e5-f525-48a6-b494-84aef0d29291" name="Default" comment="ConstraintSolver AC3-LA">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/V1/src/einsteinApp/AppTest2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/einsteinApp/AppEinstein.java" afterPath="$PROJECT_DIR$/V1/src/einsteinApp/AppEinstein.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/entities/Arc.java" afterPath="$PROJECT_DIR$/V1/src/entities/Arc.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintLeftNeighbar.java" afterPath="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintLeftNeighbar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintRightNeighbar.java" afterPath="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintRightNeighbar.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/einsteinApp/ConstraintSatisfactionProblem.java" afterPath="$PROJECT_DIR$/V1/src/einsteinApp/ConstraintSatisfactionProblem.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/constraintSolver/ConstraintSolver.java" afterPath="$PROJECT_DIR$/V1/src/constraintSolver/ConstraintSolver.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/entities/Definition.java" afterPath="$PROJECT_DIR$/V1/src/entities/Definition.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/heuristik/Heuristik.java" afterPath="$PROJECT_DIR$/V1/src/heuristik/Heuristik.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/entities/SelfLoop.java" afterPath="$PROJECT_DIR$/V1/src/entities/SelfLoop.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/einsteinApp/TestApp.java" afterPath="$PROJECT_DIR$/V1/src/einsteinApp/TestApp.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/V1/src/entities/Vertex.java" afterPath="$PROJECT_DIR$/V1/src/entities/Vertex.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="IS_EinsteinRaetsel.iws" />
@@ -28,11 +37,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TestApp.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/TestApp.java">
+      <file leaf-file-name="Definition.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/V1/src/entities/Definition.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="935">
-              <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="510">
+              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <folding>
+                <element signature="e#561#562#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Vertex.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/V1/src/entities/Vertex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="1309">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="e#430#431#0" expanded="true" />
+                <element signature="e#708#709#0" expanded="true" />
+                <element signature="e#735#736#0" expanded="true" />
+                <element signature="e#837#838#0" expanded="true" />
+                <element signature="e#869#870#0" expanded="true" />
+                <element signature="e#916#917#0" expanded="true" />
+                <element signature="e#958#959#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Heuristik.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/V1/src/heuristik/Heuristik.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="1139">
+              <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -40,51 +79,85 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConstraintSolver.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/V1/src/constraintSolver/ConstraintSolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29166666" vertical-offset="2538" max-vertical-offset="3264">
-              <caret line="163" column="25" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="25" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConstraintNotEqual.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintNotEqual.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BinaryConstraint.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/V1/src/entities/BinaryConstraint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-              <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="391">
-              <caret line="12" column="5" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AppEinstein.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AppEinstein.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/AppEinstein.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2329" max-vertical-offset="3808">
-              <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
+            <state vertical-scroll-proportion="0.3318584" vertical-offset="1006" max-vertical-offset="8568">
+              <caret line="471" column="107" selection-start-line="471" selection-start-column="107" selection-end-line="471" selection-end-column="107" />
+              <caret line="470" column="0" selection-start-line="470" selection-start-column="0" selection-end-line="470" selection-end-column="0" />
+              <caret line="469" column="52" selection-start-line="469" selection-start-column="52" selection-end-line="469" selection-end-column="52" />
+              <caret line="468" column="52" selection-start-line="468" selection-start-column="52" selection-end-line="468" selection-end-column="52" />
+              <caret line="467" column="107" selection-start-line="467" selection-start-column="107" selection-end-line="467" selection-end-column="107" />
+              <caret line="466" column="107" selection-start-line="466" selection-start-column="107" selection-end-line="466" selection-end-column="107" />
+              <caret line="68" column="39" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConstraintNeighbar.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintNeighbar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+              <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConstraintRightNeighbar.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintRightNeighbar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConstraintLeftNeighbar.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintLeftNeighbar.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+              <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConstraintSolver.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/V1/src/constraintSolver/ConstraintSolver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1790" max-vertical-offset="3774">
+              <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Arc.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/V1/src/entities/Arc.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="986">
+              <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+              <folding>
+                <element signature="e#724#725#0" expanded="true" />
+                <element signature="e#1027#1028#0" expanded="true" />
+                <element signature="e#1056#1057#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConstraintSatisfactionProblem.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/ConstraintSatisfactionProblem.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="770" max-vertical-offset="2958">
+              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -105,15 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/V1/src/constraintSolver/entities/impl/VertexImpl.java" />
-        <option value="$PROJECT_DIR$/V1/src/constraintSolver/entities/impl/Vertex.java" />
-        <option value="$PROJECT_DIR$/V1/src/app/ValueImpl.java" />
-        <option value="$PROJECT_DIR$/V1/src/constraintSolver/facade/DefintionServiceImpl.java" />
-        <option value="$PROJECT_DIR$/V1/src/app/ValueTupel.java" />
-        <option value="$PROJECT_DIR$/V1/src/constraintSolver/facade/DefintionService.java" />
-        <option value="$PROJECT_DIR$/V1/src/constraintSolver/facade/VertexService.java" />
-        <option value="$PROJECT_DIR$/V1/src/constraintSolver/facade/impl/VertexServiceImpl.java" />
-        <option value="$PROJECT_DIR$/V1/src/constraintSolver/facade/impl/DefinitionImpl.java" />
         <option value="$PROJECT_DIR$/V1/src/constraintSolver/facade/impl/DefintionServiceImpl.java" />
         <option value="$PROJECT_DIR$/V1/src/constraintSolver/facade/ConstraintSolverFactory.java" />
         <option value="$PROJECT_DIR$/V1/src/app/ConstraintLessThan.java" />
@@ -144,18 +208,27 @@
         <option value="$PROJECT_DIR$/V1/src/einsteinApp/constraints/TestApp.java" />
         <option value="$PROJECT_DIR$/V1/src/constraintSolver/Arc.java" />
         <option value="$PROJECT_DIR$/V1/src/constraintSolver/SelfLoop.java" />
-        <option value="$PROJECT_DIR$/V1/src/entities/Arc.java" />
         <option value="$PROJECT_DIR$/V1/src/constraintSolver/ArcID.java" />
-        <option value="$PROJECT_DIR$/V1/src/app/AppTest.java" />
         <option value="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintNotEqual.java" />
         <option value="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintEqual.java" />
-        <option value="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintLeftNeighbar.java" />
-        <option value="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintNeighbar.java" />
-        <option value="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintRightNeighbar.java" />
-        <option value="$PROJECT_DIR$/V1/src/einsteinApp/AppEinstein.java" />
         <option value="$PROJECT_DIR$/V1/src/constraintSolver/ConstraintSolverAlgorithmus.java" />
+        <option value="$PROJECT_DIR$/V1/src/app/AppTest.java" />
+        <option value="$PROJECT_DIR$/V1/src/einsteinApp/QuickSort.java" />
+        <option value="$PROJECT_DIR$/V1/src/heuristik/QuickSort.java" />
+        <option value="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintEqualValue.java" />
+        <option value="$PROJECT_DIR$/V1/src/entities/Definition.java" />
+        <option value="$PROJECT_DIR$/V1/src/entities/SelfLoop.java" />
         <option value="$PROJECT_DIR$/V1/src/einsteinApp/TestApp.java" />
+        <option value="$PROJECT_DIR$/V1/src/einsteinApp/AppTest2.java" />
+        <option value="$PROJECT_DIR$/V1/src/entities/Arc.java" />
+        <option value="$PROJECT_DIR$/V1/src/heuristik/Heuristik.java" />
         <option value="$PROJECT_DIR$/V1/src/constraintSolver/ConstraintSolver.java" />
+        <option value="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintLeftNeighbar.java" />
+        <option value="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintRightNeighbar.java" />
+        <option value="$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintNeighbar.java" />
+        <option value="$PROJECT_DIR$/V1/src/entities/Vertex.java" />
+        <option value="$PROJECT_DIR$/V1/src/einsteinApp/AppEinstein.java" />
+        <option value="$PROJECT_DIR$/V1/src/einsteinApp/ConstraintSatisfactionProblem.java" />
       </list>
     </option>
   </component>
@@ -246,6 +319,80 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="heuristik" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IS_EinsteinRaetsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IS_EinsteinRaetsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="V1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entities" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IS_EinsteinRaetsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IS_EinsteinRaetsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="V1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einsteinApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IS_EinsteinRaetsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IS_EinsteinRaetsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="V1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="einsteinApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="constraints" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -266,6 +413,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="constraintSolver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IS_EinsteinRaetsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IS_EinsteinRaetsel" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="V1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -340,23 +509,7 @@
       <recent name="C:\Users\Alex\Documents\GitHub\IS_EinsteinRaetsel\src" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestApp">
-    <configuration default="false" name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="einsteinApp.App" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="V1" />
-      <envs />
-      <RunnerSettings RunnerId="Run" />
-      <ConfigurationWrapper RunnerId="Run" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Application.AppEinstein">
     <configuration default="false" name="AppEinstein" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="einsteinApp.AppEinstein" />
       <option name="VM_PARAMETERS" />
@@ -369,7 +522,13 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="V1" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -385,7 +544,67 @@
       <option name="PASS_PARENT_ENVS" value="true" />
       <module name="V1" />
       <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
       <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="AppTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="app.AppTest" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="V1" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="QuickSort" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="heuristik.QuickSort" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="V1" />
+      <envs />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="AppTest2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="einsteinApp.AppTest2" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="V1" />
+      <envs />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
       <ConfigurationWrapper RunnerId="Run" />
       <method />
     </configuration>
@@ -554,16 +773,20 @@
       <option name="FILTER_LOGCAT_AUTOMATICALLY" value="true" />
       <method />
     </configuration>
-    <list size="3">
-      <item index="0" class="java.lang.String" itemvalue="Application.App" />
-      <item index="1" class="java.lang.String" itemvalue="Application.AppEinstein" />
-      <item index="2" class="java.lang.String" itemvalue="Application.TestApp" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Application.AppEinstein" />
+      <item index="1" class="java.lang.String" itemvalue="Application.TestApp" />
+      <item index="2" class="java.lang.String" itemvalue="Application.AppTest" />
+      <item index="3" class="java.lang.String" itemvalue="Application.QuickSort" />
+      <item index="4" class="java.lang.String" itemvalue="Application.AppTest2" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Application.TestApp" />
-        <item index="1" class="java.lang.String" itemvalue="Application.App" />
-        <item index="2" class="java.lang.String" itemvalue="Application.AppEinstein" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Application.AppEinstein" />
+        <item index="1" class="java.lang.String" itemvalue="Application.TestApp" />
+        <item index="2" class="java.lang.String" itemvalue="Application.AppTest2" />
+        <item index="3" class="java.lang.String" itemvalue="Application.QuickSort" />
+        <item index="4" class="java.lang.String" itemvalue="Application.AppTest" />
       </list>
     </recent_temporary>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
@@ -613,7 +836,47 @@
       <created>1418772451127</created>
       <updated>1418772451127</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Merge branch 'master' of https://github.com/sawa112/IS_EinsteinRaetsel&#10;&#10;Conflicts:&#10;&#9;V1/src/app/AppTest.java&#10;&#9;V1/src/constraintSolver/ConstraintSolver.java&#10;">
+      <created>1418772532057</created>
+      <updated>1418772532057</updated>
+    </task>
+    <task id="LOCAL-00010" summary="ConstraintSolver">
+      <created>1418772558110</created>
+      <updated>1418772558110</updated>
+    </task>
+    <task id="LOCAL-00011" summary="TestApp">
+      <created>1418772650674</created>
+      <updated>1418772650674</updated>
+    </task>
+    <task id="LOCAL-00012" summary="TestApp + Kommentare">
+      <created>1418773075437</created>
+      <updated>1418773075437</updated>
+    </task>
+    <task id="LOCAL-00013" summary="ConstraintSolver AC3-LA">
+      <created>1418773728482</created>
+      <updated>1418773728482</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ConstrationSatisfactionProblem">
+      <created>1418777897624</created>
+      <updated>1418777897624</updated>
+    </task>
+    <task id="LOCAL-00015" summary="TestApp">
+      <created>1418778182284</created>
+      <updated>1418778182284</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Vertex ToString">
+      <created>1418779258467</created>
+      <updated>1418779258467</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Heuristik Quicksort">
+      <created>1418781961678</created>
+      <updated>1418781961678</updated>
+    </task>
+    <task id="LOCAL-00018" summary="AppEinstein + NoHeuristik">
+      <created>1418785052884</created>
+      <updated>1418785052884</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -627,10 +890,10 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.43928194" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4308342" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31151003" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.19746569" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946146" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -638,7 +901,7 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4435058" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2375924" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -665,11 +928,28 @@
     <MESSAGE value="Commit V1" />
     <MESSAGE value="Commit Arc und SelfLoop mit ConstraintList" />
     <MESSAGE value="AC3-LA" />
-    <option name="LAST_COMMIT_MESSAGE" value="AC3-LA" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/sawa112/IS_EinsteinRaetsel&#10;&#10;Conflicts:&#10;&#9;V1/src/app/AppTest.java&#10;&#9;V1/src/constraintSolver/ConstraintSolver.java&#10;" />
+    <MESSAGE value="ConstraintSolver" />
+    <MESSAGE value="TestApp + Kommentare" />
+    <MESSAGE value="ConstraintSolver AC3-LA" />
+    <MESSAGE value="ConstrationSatisfactionProblem" />
+    <MESSAGE value="TestApp" />
+    <MESSAGE value="Vertex ToString" />
+    <MESSAGE value="Heuristik Quicksort" />
+    <MESSAGE value="AppEinstein + NoHeuristik" />
+    <option name="LAST_COMMIT_MESSAGE" value="AppEinstein + NoHeuristik" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="2" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/V1/src/einsteinApp/ConstraintSatisfactionProblem.java</url>
+          <line>40</line>
+          <properties />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="41" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -697,20 +977,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/V1/src/constraintSolver/ConstraintNet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="663">
-          <caret line="31" column="45" selection-start-line="31" selection-start-column="45" selection-end-line="31" selection-end-column="45" />
-          <folding>
-            <element signature="e#515#516#0" expanded="true" />
-            <element signature="e#545#546#0" expanded="true" />
-            <element signature="e#892#893#0" expanded="true" />
-            <element signature="e#956#957#0" expanded="true" />
-            <element signature="e#1004#1005#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/V1/src/app/ConstraintLesserThan.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
@@ -734,37 +1000,118 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/V1/src/entities/BinaryConstraint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/VariablenCommon.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="680">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/V1/src/entities/Vertex.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="583" max-vertical-offset="1190">
-          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="73" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.33266532" vertical-offset="26660" max-vertical-offset="52955">
+          <caret line="1664" column="0" selection-start-line="1664" selection-start-column="0" selection-end-line="1664" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/V1/src/entities/Arc.java">
+    <entry file="file://$PROJECT_DIR$/V1/src/heuristik/QuickSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="536" max-vertical-offset="1258">
-          <caret line="76" column="55" selection-start-line="76" selection-start-column="49" selection-end-line="76" selection-end-column="55" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1054">
+          <caret line="21" column="51" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="51" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#450#458#0" expanded="true" />
+            <element signature="e#1158#1166#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintEqual.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="272">
+          <caret line="4" column="29" selection-start-line="4" selection-start-column="29" selection-end-line="13" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V1/src/entities/Constraint.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="187">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/lang/String.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="25739" max-vertical-offset="51119">
+          <caret line="1590" column="0" selection-start-line="1590" selection-start-column="0" selection-end-line="1590" selection-end-column="0" />
+          <folding>
+            <element signature="e#63028#63029#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/jre/lib/rt.jar!/sun/misc/Launcher.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="358" max-vertical-offset="1275">
+          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4812" max-vertical-offset="36584">
+          <caret line="357" column="0" selection-start-line="357" selection-start-column="0" selection-end-line="357" selection-end-column="0" />
+          <folding>
+            <element signature="e#13629#13630#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/lang/Integer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="10082" max-vertical-offset="20145">
+          <caret line="638" column="0" selection-start-line="638" selection-start-column="0" selection-end-line="638" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/ArrayList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1990" max-vertical-offset="18955">
+          <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
+          <folding>
+            <element signature="e#9376#9377#0" expanded="true" />
+            <element signature="e#9403#9404#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/V1/src/app/AppTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="740" max-vertical-offset="1462">
-          <caret line="73" column="10" selection-start-line="73" selection-start-column="10" selection-end-line="73" selection-end-column="10" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.0" vertical-offset="1021" max-vertical-offset="1734">
+          <caret line="85" column="59" selection-start-line="85" selection-start-column="43" selection-end-line="85" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/lang/Cloneable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7328094" vertical-offset="120" max-vertical-offset="629">
+          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -776,34 +1123,143 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/V1/src/entities/BinaryConstraint.java">
+    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/AppTest2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="204">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="51" max-vertical-offset="1173">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/TestApp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="409" max-vertical-offset="2040">
+          <caret line="95" column="67" selection-start-line="95" selection-start-column="57" selection-end-line="95" selection-end-column="67" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2554#2564#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V1/src/entities/SelfLoop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="230" max-vertical-offset="799">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#806#807#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V1/src/constraintSolver/ConstraintNet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="162" max-vertical-offset="629">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding>
+            <element signature="e#545#546#0" expanded="true" />
+            <element signature="e#857#858#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="6432" max-vertical-offset="18955">
+          <caret line="420" column="0" selection-start-line="420" selection-start-column="0" selection-end-line="420" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintRightNeighbar.java">
+    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintEqualValue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.048640914" vertical-offset="0" max-vertical-offset="699">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="59" max-vertical-offset="391">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding>
+            <element signature="e#197#198#0" expanded="true" />
+            <element signature="e#231#232#0" expanded="true" />
+            <element signature="e#333#334#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintNeighbar.java">
+    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintNotEqual.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.048640914" vertical-offset="0" max-vertical-offset="699">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-          <folding />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding>
+            <element signature="e#251#252#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/AppEinstein.java">
+    <entry file="file://$PROJECT_DIR$/V1/src/heuristik/Heuristik.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2329" max-vertical-offset="3808">
-          <caret line="136" column="8" selection-start-line="136" selection-start-column="8" selection-end-line="136" selection-end-column="8" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="1139">
+          <caret line="28" column="32" selection-start-line="28" selection-start-column="32" selection-end-line="28" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V1/src/entities/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="124" max-vertical-offset="1309">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="e#430#431#0" expanded="true" />
+            <element signature="e#708#709#0" expanded="true" />
+            <element signature="e#735#736#0" expanded="true" />
+            <element signature="e#837#838#0" expanded="true" />
+            <element signature="e#869#870#0" expanded="true" />
+            <element signature="e#916#917#0" expanded="true" />
+            <element signature="e#958#959#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V1/src/entities/Definition.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1" max-vertical-offset="510">
+          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <folding>
+            <element signature="e#561#562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/ConstraintSatisfactionProblem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="770" max-vertical-offset="2958">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V1/src/entities/Arc.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="308" max-vertical-offset="986">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding>
+            <element signature="e#724#725#0" expanded="true" />
+            <element signature="e#1027#1028#0" expanded="true" />
+            <element signature="e#1056#1057#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/V1/src/constraintSolver/ConstraintSolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1790" max-vertical-offset="3774">
+          <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -812,51 +1268,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintLeftNeighbar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.047091413" vertical-offset="0" max-vertical-offset="722">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintEqual.java">
+    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintNeighbar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.047091413" vertical-offset="0" max-vertical-offset="722">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="340">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintNotEqual.java">
+    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/constraints/ConstraintRightNeighbar.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="289">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_45/src.zip!/java/util/ArrayList.java">
+    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/AppEinstein.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33266532" vertical-offset="1976" max-vertical-offset="18921">
-          <caret line="149" column="11" selection-start-line="149" selection-start-column="11" selection-end-line="149" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/V1/src/einsteinApp/TestApp.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="16" max-vertical-offset="935">
-          <caret line="18" column="18" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+        <state vertical-scroll-proportion="0.3318584" vertical-offset="1006" max-vertical-offset="8568">
+          <caret line="471" column="107" selection-start-line="471" selection-start-column="107" selection-end-line="471" selection-end-column="107" />
+          <caret line="470" column="0" selection-start-line="470" selection-start-column="0" selection-end-line="470" selection-end-column="0" />
+          <caret line="469" column="52" selection-start-line="469" selection-start-column="52" selection-end-line="469" selection-end-column="52" />
+          <caret line="468" column="52" selection-start-line="468" selection-start-column="52" selection-end-line="468" selection-end-column="52" />
+          <caret line="467" column="107" selection-start-line="467" selection-start-column="107" selection-end-line="467" selection-end-column="107" />
+          <caret line="466" column="107" selection-start-line="466" selection-start-column="107" selection-end-line="466" selection-end-column="107" />
+          <caret line="68" column="39" selection-start-line="68" selection-start-column="31" selection-end-line="68" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/V1/src/constraintSolver/ConstraintSolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29166666" vertical-offset="2538" max-vertical-offset="3264">
-          <caret line="163" column="25" selection-start-line="163" selection-start-column="25" selection-end-line="163" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>

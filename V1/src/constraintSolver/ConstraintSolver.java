@@ -23,9 +23,10 @@ public class ConstraintSolver {
      * @param selfLoopList
      */
     public void nc(List<SelfLoop> selfLoopList) {
-        List<Object> deleteList = new ArrayList<>();
+
 
         for (SelfLoop selfLoop : selfLoopList) {
+            List<Object> deleteList = new ArrayList<>();
             Vertex v = selfLoop.getVertex();
             Definition d = v.getDefinitionRange();
             for (Object x : d.getDefinitionList()) {
@@ -106,7 +107,7 @@ public class ConstraintSolver {
      * @param arcList
      * @return
      */
-    public boolean ac3la(Vertex cv, List<Arc> arcList) {
+    public boolean ac3la(int cv, List<Arc> arcList) {
         List<Arc> q = getArcs(cv, arcList);
         boolean consistent = true;
         while (!q.isEmpty() && consistent) {
@@ -135,14 +136,14 @@ public class ConstraintSolver {
      * @param arcList
      * @return
      */
-    private List<Arc> unionQ(Vertex vk, Vertex vm, Vertex cv, List<Arc> q, List<Arc> arcList) {
+    private List<Arc> unionQ(Vertex vk, Vertex vm, int cv, List<Arc> q, List<Arc> arcList) {
         for (Arc arc : arcList) {
             Vertex vi = arc.getSource();
-            Vertex vTarget = arc.getSource();
-            if (vTarget.equals(vk) &&
-                    !vi.equals(vk) &&
-                    !vi.equals(vm) &&
-                    vi.getRang() > cv.getRang()) {
+            Vertex vTarget = arc.getTarget();
+            if (vTarget.getRang() == vk.getRang() &&
+                    vi.getRang() != vk.getRang() &&
+                    vi.getRang() != vm.getRang() &&
+                    vi.getRang() > cv) {
                 Arc arcViVk = getArc(vi, vk, arcList);
                 if (!q.contains(arcViVk)) {
                     q.add(arcViVk);
@@ -197,16 +198,16 @@ public class ConstraintSolver {
      * <p/>
      * :: (Vi,Vcv) in arcs(G) , i > cv
      *
-     * @param ca
+     * @param cv
      * @param arcList
      * @return
      */
-    private List<Arc> getArcs(Vertex ca, List<Arc> arcList) {
+    private List<Arc> getArcs(int cv, List<Arc> arcList) {
         List<Arc> resultList = new ArrayList<>();
         for (Arc arc : arcList) {
             Vertex vi = arc.getSource();
             Vertex target = arc.getTarget();
-            if (target.getName().equals(ca.getName()) && vi.getRang() > ca.getRang()) {
+            if (target.getRang() == cv && vi.getRang() > cv) {
                 resultList.add(arc);
             }
         }

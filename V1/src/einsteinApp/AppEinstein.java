@@ -1,7 +1,6 @@
 package einsteinApp;
 
 import constraintSolver.ConstraintNet;
-import constraintSolver.ConstraintSolver;
 import einsteinApp.constraints.*;
 import entities.*;
 
@@ -15,42 +14,46 @@ public class AppEinstein {
         /**
          * Definitionsbereich erstellen
          */
-        Definition defPosition = new Definition();
-        defPosition.addValue(1);
-        defPosition.addValue(2);
-        defPosition.addValue(3);
-        defPosition.addValue(4);
-        defPosition.addValue(5);
+        List<Definition> definitionList = new ArrayList<>();
+        for (int i = 0; i < 25; i++){
+            Definition defPosition = new Definition();
+            defPosition.addValue(1);
+            defPosition.addValue(2);
+            defPosition.addValue(3);
+            defPosition.addValue(4);
+            defPosition.addValue(5);
+            definitionList.add(defPosition);
+        }
 
-        Definition defGetraenkMilch = new Definition(defPosition.getDefinitionList());
-        Definition defGetraenkTee = new Definition(defPosition.getDefinitionList());
-        Definition defGetraenkKaffee = new Definition(defPosition.getDefinitionList());
-        Definition defGetraenkWasser = new Definition(defPosition.getDefinitionList());
-        Definition defGetraenkBier = new Definition(defPosition.getDefinitionList());
+        Definition defGetraenkMilch = new Definition(definitionList.get(0).getDefinitionList());
+        Definition defGetraenkTee = new Definition(definitionList.get(1).getDefinitionList());
+        Definition defGetraenkKaffee = new Definition(definitionList.get(2).getDefinitionList());
+        Definition defGetraenkWasser = new Definition(definitionList.get(3).getDefinitionList());
+        Definition defGetraenkBier = new Definition(definitionList.get(4).getDefinitionList());
 
-        Definition defZigarettenWinfield = new Definition(defPosition.getDefinitionList());
-        Definition defZigarettenRothmanns = new Definition(defPosition.getDefinitionList());
-        Definition defZigarettenDunhill = new Definition(defPosition.getDefinitionList());
-        Definition defZigarettenPallMall = new Definition(defPosition.getDefinitionList());
-        Definition defZigarettenMarlboro = new Definition(defPosition.getDefinitionList());
+        Definition defZigarettenWinfield = new Definition(definitionList.get(5).getDefinitionList());
+        Definition defZigarettenRothmanns = new Definition(definitionList.get(6).getDefinitionList());
+        Definition defZigarettenDunhill = new Definition(definitionList.get(7).getDefinitionList());
+        Definition defZigarettenPallMall = new Definition(definitionList.get(8).getDefinitionList());
+        Definition defZigarettenMarlboro = new Definition(definitionList.get(9).getDefinitionList());
 
-        Definition defTierePferd = new Definition(defPosition.getDefinitionList());
-        Definition defTiereHund = new Definition(defPosition.getDefinitionList());
-        Definition defTiereFisch = new Definition(defPosition.getDefinitionList());
-        Definition defTiereKatze = new Definition(defPosition.getDefinitionList());
-        Definition defTiereVogel = new Definition(defPosition.getDefinitionList());
+        Definition defTierePferd = new Definition(definitionList.get(10).getDefinitionList());
+        Definition defTiereHund = new Definition(definitionList.get(11).getDefinitionList());
+        Definition defTiereFisch = new Definition(definitionList.get(12).getDefinitionList());
+        Definition defTiereKatze = new Definition(definitionList.get(13).getDefinitionList());
+        Definition defTiereVogel = new Definition(definitionList.get(14).getDefinitionList());
 
-        Definition defFarbeGruen = new Definition(defPosition.getDefinitionList());
-        Definition defFarbeBlau = new Definition(defPosition.getDefinitionList());
-        Definition defFarbeRot = new Definition(defPosition.getDefinitionList());
-        Definition defFarbeGelb = new Definition(defPosition.getDefinitionList());
-        Definition defFarbeWeiss = new Definition(defPosition.getDefinitionList());
+        Definition defFarbeGruen = new Definition(definitionList.get(15).getDefinitionList());
+        Definition defFarbeBlau = new Definition(definitionList.get(16).getDefinitionList());
+        Definition defFarbeRot = new Definition(definitionList.get(17).getDefinitionList());
+        Definition defFarbeGelb = new Definition(definitionList.get(18).getDefinitionList());
+        Definition defFarbeWeiss = new Definition(definitionList.get(19).getDefinitionList());
 
-        Definition defNationalitaetDaene = new Definition(defPosition.getDefinitionList());
-        Definition defNationalitaetBrite = new Definition(defPosition.getDefinitionList());
-        Definition defNationalitaetNorwege = new Definition(defPosition.getDefinitionList());
-        Definition defNationalitaetSchwede = new Definition(defPosition.getDefinitionList());
-        Definition defNationalitaetDeutsche = new Definition(defPosition.getDefinitionList());
+        Definition defNationalitaetDaene = new Definition(definitionList.get(20).getDefinitionList());
+        Definition defNationalitaetBrite = new Definition(definitionList.get(21).getDefinitionList());
+        Definition defNationalitaetNorwege = new Definition(definitionList.get(22).getDefinitionList());
+        Definition defNationalitaetSchwede = new Definition(definitionList.get(23).getDefinitionList());
+        Definition defNationalitaetDeutsche = new Definition(definitionList.get(24).getDefinitionList());
 
 
         /**
@@ -126,142 +129,150 @@ public class AppEinstein {
         BinaryConstraint constraintNeighbar = new ConstraintNeighbar();
         BinaryConstraint constraintLeftNeighbar = new ConstraintLeftNeighbar();
         BinaryConstraint constraintRightNeighbar = new ConstraintRightNeighbar();
-        UnaryConstraint constraintNotEqualValueOne = new ConstraintEqualValue(1);
-        UnaryConstraint constraintNotEqualValueThree = new ConstraintEqualValue(3);
 
+        UnaryConstraint constraintEqualValueOne = new ConstraintEqualValue(1);
+        UnaryConstraint constraintEqualValueThree = new ConstraintEqualValue(3);
+
+        List<BinaryConstraint> ConstraintListNotEqual = new ArrayList<>();
+        ConstraintListNotEqual.add(constraintNotEqual);
+
+        List<UnaryConstraint> ConstraintListEqualValueOne = new ArrayList<>();
+        ConstraintListEqualValueOne.add(constraintEqualValueOne);
+        List<UnaryConstraint> ConstraintListEqualValueThree = new ArrayList<>();
+        ConstraintListEqualValueThree.add(constraintEqualValueThree);
 
         /**
          * Kanten erstellen
          */
         // Getraenke
-        Arc arcGetraenkMilchGetraenkTee = new Arc(vertexGetraenkMilch, vertexGetraenkTee, constraintNotEqual);
-        Arc arcGetraenkMilchGetraenkKaffee = new Arc(vertexGetraenkMilch, vertexGetraenkKaffee, constraintNotEqual);
-        Arc arcGetraenkMilchGetraenkWasser = new Arc(vertexGetraenkMilch, vertexGetraenkWasser, constraintNotEqual);
-        Arc arcGetraenkMilchGetraenkBier = new Arc(vertexGetraenkMilch, vertexGetraenkBier, constraintNotEqual);
+        Arc arcGetraenkMilchGetraenkTee = new Arc(vertexGetraenkMilch, vertexGetraenkTee, ConstraintListNotEqual);
+        Arc arcGetraenkMilchGetraenkKaffee = new Arc(vertexGetraenkMilch, vertexGetraenkKaffee, ConstraintListNotEqual);
+        Arc arcGetraenkMilchGetraenkWasser = new Arc(vertexGetraenkMilch, vertexGetraenkWasser, ConstraintListNotEqual);
+        Arc arcGetraenkMilchGetraenkBier = new Arc(vertexGetraenkMilch, vertexGetraenkBier, ConstraintListNotEqual);
 
-        Arc arcGetraenkTeeGetraenkMilch = new Arc(vertexGetraenkTee, vertexGetraenkMilch, constraintNotEqual);
-        Arc arcGetraenkTeeGetraenkKaffee = new Arc(vertexGetraenkTee, vertexGetraenkKaffee, constraintNotEqual);
-        Arc arcGetraenkTeeGetraenkWasser = new Arc(vertexGetraenkTee, vertexGetraenkWasser, constraintNotEqual);
-        Arc arcGetraenkTeeGetraenkBier = new Arc(vertexGetraenkTee, vertexGetraenkBier, constraintNotEqual);
+        Arc arcGetraenkTeeGetraenkMilch = new Arc(vertexGetraenkTee, vertexGetraenkMilch, ConstraintListNotEqual);
+        Arc arcGetraenkTeeGetraenkKaffee = new Arc(vertexGetraenkTee, vertexGetraenkKaffee, ConstraintListNotEqual);
+        Arc arcGetraenkTeeGetraenkWasser = new Arc(vertexGetraenkTee, vertexGetraenkWasser, ConstraintListNotEqual);
+        Arc arcGetraenkTeeGetraenkBier = new Arc(vertexGetraenkTee, vertexGetraenkBier, ConstraintListNotEqual);
 
-        Arc arcGetraenkKaffeeGetraenkTee = new Arc(vertexGetraenkKaffee, vertexGetraenkTee, constraintNotEqual);
-        Arc arcGetraenkKaffeeGetraenkMilch = new Arc(vertexGetraenkKaffee, vertexGetraenkMilch, constraintNotEqual);
-        Arc arcGetraenkKaffeeGetraenkWasser = new Arc(vertexGetraenkKaffee, vertexGetraenkWasser, constraintNotEqual);
-        Arc arcGetraenkKaffeeGetraenkBier = new Arc(vertexGetraenkKaffee, vertexGetraenkBier, constraintNotEqual);
+        Arc arcGetraenkKaffeeGetraenkTee = new Arc(vertexGetraenkKaffee, vertexGetraenkTee, ConstraintListNotEqual);
+        Arc arcGetraenkKaffeeGetraenkMilch = new Arc(vertexGetraenkKaffee, vertexGetraenkMilch, ConstraintListNotEqual);
+        Arc arcGetraenkKaffeeGetraenkWasser = new Arc(vertexGetraenkKaffee, vertexGetraenkWasser, ConstraintListNotEqual);
+        Arc arcGetraenkKaffeeGetraenkBier = new Arc(vertexGetraenkKaffee, vertexGetraenkBier, ConstraintListNotEqual);
 
-        Arc arcGetraenkWasserGetraenkTee = new Arc(vertexGetraenkWasser, vertexGetraenkTee, constraintNotEqual);
-        Arc arcGetraenkWasserGetraenkKaffee = new Arc(vertexGetraenkWasser, vertexGetraenkKaffee, constraintNotEqual);
-        Arc arcGetraenkWasserGetraenkMilch = new Arc(vertexGetraenkWasser, vertexGetraenkMilch, constraintNotEqual);
-        Arc arcGetraenkWasserGetraenkBier = new Arc(vertexGetraenkWasser, vertexGetraenkBier, constraintNotEqual);
+        Arc arcGetraenkWasserGetraenkTee = new Arc(vertexGetraenkWasser, vertexGetraenkTee, ConstraintListNotEqual);
+        Arc arcGetraenkWasserGetraenkKaffee = new Arc(vertexGetraenkWasser, vertexGetraenkKaffee, ConstraintListNotEqual);
+        Arc arcGetraenkWasserGetraenkMilch = new Arc(vertexGetraenkWasser, vertexGetraenkMilch, ConstraintListNotEqual);
+        Arc arcGetraenkWasserGetraenkBier = new Arc(vertexGetraenkWasser, vertexGetraenkBier, ConstraintListNotEqual);
 
-        Arc arcGetraenkBierGetraenkTee = new Arc(vertexGetraenkBier, vertexGetraenkTee, constraintNotEqual);
-        Arc arcGetraenkBierGetraenkKaffee = new Arc(vertexGetraenkBier, vertexGetraenkKaffee, constraintNotEqual);
-        Arc arcGetraenkBierGetraenkWasser = new Arc(vertexGetraenkBier, vertexGetraenkWasser, constraintNotEqual);
-        Arc arcGetraenkBierGetraenkMilch = new Arc(vertexGetraenkBier, vertexGetraenkMilch, constraintNotEqual);
+        Arc arcGetraenkBierGetraenkTee = new Arc(vertexGetraenkBier, vertexGetraenkTee, ConstraintListNotEqual);
+        Arc arcGetraenkBierGetraenkKaffee = new Arc(vertexGetraenkBier, vertexGetraenkKaffee, ConstraintListNotEqual);
+        Arc arcGetraenkBierGetraenkWasser = new Arc(vertexGetraenkBier, vertexGetraenkWasser, ConstraintListNotEqual);
+        Arc arcGetraenkBierGetraenkMilch = new Arc(vertexGetraenkBier, vertexGetraenkMilch, ConstraintListNotEqual);
 
         // Zigaretten
-        Arc arcZigarettenWinfieldZigarettenRothmanns = new Arc(vertexZigarettenWinfield, vertexZigarettenRothmanns, constraintNotEqual);
-        Arc arcZigarettenWinfieldZigarettenDunhill = new Arc(vertexZigarettenWinfield, vertexZigarettenDunhill, constraintNotEqual);
-        Arc arcZigarettenWinfieldZigarettenPallMall = new Arc(vertexZigarettenWinfield, vertexZigarettenPallMall, constraintNotEqual);
-        Arc arcZigarettenWinfieldZigarettenMarlboro = new Arc(vertexZigarettenWinfield, vertexZigarettenMarlboro, constraintNotEqual);
+        Arc arcZigarettenWinfieldZigarettenRothmanns = new Arc(vertexZigarettenWinfield, vertexZigarettenRothmanns, ConstraintListNotEqual);
+        Arc arcZigarettenWinfieldZigarettenDunhill = new Arc(vertexZigarettenWinfield, vertexZigarettenDunhill, ConstraintListNotEqual);
+        Arc arcZigarettenWinfieldZigarettenPallMall = new Arc(vertexZigarettenWinfield, vertexZigarettenPallMall, ConstraintListNotEqual);
+        Arc arcZigarettenWinfieldZigarettenMarlboro = new Arc(vertexZigarettenWinfield, vertexZigarettenMarlboro, ConstraintListNotEqual);
 
-        Arc arcZigarettenRothmannsZigarettenWinfield = new Arc(vertexZigarettenRothmanns, vertexZigarettenWinfield, constraintNotEqual);
-        Arc arcZigarettenRothmannsZigarettenDunhill = new Arc(vertexZigarettenRothmanns, vertexZigarettenDunhill, constraintNotEqual);
-        Arc arcZigarettenRothmannsZigarettenPallMall = new Arc(vertexZigarettenRothmanns, vertexZigarettenPallMall, constraintNotEqual);
-        Arc arcZigarettenRothmannsZigarettenMarlboro = new Arc(vertexZigarettenRothmanns, vertexZigarettenMarlboro, constraintNotEqual);
+        Arc arcZigarettenRothmannsZigarettenWinfield = new Arc(vertexZigarettenRothmanns, vertexZigarettenWinfield, ConstraintListNotEqual);
+        Arc arcZigarettenRothmannsZigarettenDunhill = new Arc(vertexZigarettenRothmanns, vertexZigarettenDunhill, ConstraintListNotEqual);
+        Arc arcZigarettenRothmannsZigarettenPallMall = new Arc(vertexZigarettenRothmanns, vertexZigarettenPallMall, ConstraintListNotEqual);
+        Arc arcZigarettenRothmannsZigarettenMarlboro = new Arc(vertexZigarettenRothmanns, vertexZigarettenMarlboro, ConstraintListNotEqual);
 
-        Arc arcZigarettenDunhillZigarettenRothmanns = new Arc(vertexZigarettenDunhill, vertexZigarettenRothmanns, constraintNotEqual);
-        Arc arcZigarettenDunhillZigarettenWinfield = new Arc(vertexZigarettenDunhill, vertexZigarettenWinfield, constraintNotEqual);
-        Arc arcZigarettenDunhillZigarettenPallMall = new Arc(vertexZigarettenDunhill, vertexZigarettenPallMall, constraintNotEqual);
-        Arc arcZigarettenDunhillZigarettenMarlboro = new Arc(vertexZigarettenDunhill, vertexZigarettenMarlboro, constraintNotEqual);
+        Arc arcZigarettenDunhillZigarettenRothmanns = new Arc(vertexZigarettenDunhill, vertexZigarettenRothmanns, ConstraintListNotEqual);
+        Arc arcZigarettenDunhillZigarettenWinfield = new Arc(vertexZigarettenDunhill, vertexZigarettenWinfield, ConstraintListNotEqual);
+        Arc arcZigarettenDunhillZigarettenPallMall = new Arc(vertexZigarettenDunhill, vertexZigarettenPallMall, ConstraintListNotEqual);
+        Arc arcZigarettenDunhillZigarettenMarlboro = new Arc(vertexZigarettenDunhill, vertexZigarettenMarlboro, ConstraintListNotEqual);
 
-        Arc arcZigarettenPallMallZigarettenRothmanns = new Arc(vertexZigarettenPallMall, vertexZigarettenRothmanns, constraintNotEqual);
-        Arc arcZigarettenPallMallZigarettenDunhill = new Arc(vertexZigarettenPallMall, vertexZigarettenDunhill, constraintNotEqual);
-        Arc arcZigarettenPallMallZigarettenWinfield = new Arc(vertexZigarettenPallMall, vertexZigarettenWinfield, constraintNotEqual);
-        Arc arcZigarettenPallMallZigarettenMarlboro = new Arc(vertexZigarettenPallMall, vertexZigarettenMarlboro, constraintNotEqual);
+        Arc arcZigarettenPallMallZigarettenRothmanns = new Arc(vertexZigarettenPallMall, vertexZigarettenRothmanns, ConstraintListNotEqual);
+        Arc arcZigarettenPallMallZigarettenDunhill = new Arc(vertexZigarettenPallMall, vertexZigarettenDunhill, ConstraintListNotEqual);
+        Arc arcZigarettenPallMallZigarettenWinfield = new Arc(vertexZigarettenPallMall, vertexZigarettenWinfield, ConstraintListNotEqual);
+        Arc arcZigarettenPallMallZigarettenMarlboro = new Arc(vertexZigarettenPallMall, vertexZigarettenMarlboro, ConstraintListNotEqual);
 
-        Arc arcZigarettenMarlboroZigarettenRothmanns = new Arc(vertexZigarettenMarlboro, vertexZigarettenRothmanns, constraintNotEqual);
-        Arc arcZigarettenMarlboroZigarettenDunhill = new Arc(vertexZigarettenMarlboro, vertexZigarettenDunhill, constraintNotEqual);
-        Arc arcZigarettenMarlboroZigarettenPallMall = new Arc(vertexZigarettenMarlboro, vertexZigarettenPallMall, constraintNotEqual);
-        Arc arcZigarettenMarlboroZigarettenWinfield = new Arc(vertexZigarettenMarlboro, vertexZigarettenWinfield, constraintNotEqual);
+        Arc arcZigarettenMarlboroZigarettenRothmanns = new Arc(vertexZigarettenMarlboro, vertexZigarettenRothmanns, ConstraintListNotEqual);
+        Arc arcZigarettenMarlboroZigarettenDunhill = new Arc(vertexZigarettenMarlboro, vertexZigarettenDunhill, ConstraintListNotEqual);
+        Arc arcZigarettenMarlboroZigarettenPallMall = new Arc(vertexZigarettenMarlboro, vertexZigarettenPallMall, ConstraintListNotEqual);
+        Arc arcZigarettenMarlboroZigarettenWinfield = new Arc(vertexZigarettenMarlboro, vertexZigarettenWinfield, ConstraintListNotEqual);
 
         // Tiere
-        Arc arcTierePferdTiereHund = new Arc(vertexTierePferd, vertexTiereHund, constraintNotEqual);
-        Arc arcTierePferdTiereFisch = new Arc(vertexTierePferd, vertexTiereFisch, constraintNotEqual);
-        Arc arcTierePferdTiereKatze = new Arc(vertexTierePferd, vertexTiereKatze, constraintNotEqual);
-        Arc arcTierePferdTiereVogel = new Arc(vertexTierePferd, vertexTiereVogel, constraintNotEqual);
+        Arc arcTierePferdTiereHund = new Arc(vertexTierePferd, vertexTiereHund, ConstraintListNotEqual);
+        Arc arcTierePferdTiereFisch = new Arc(vertexTierePferd, vertexTiereFisch, ConstraintListNotEqual);
+        Arc arcTierePferdTiereKatze = new Arc(vertexTierePferd, vertexTiereKatze, ConstraintListNotEqual);
+        Arc arcTierePferdTiereVogel = new Arc(vertexTierePferd, vertexTiereVogel, ConstraintListNotEqual);
 
-        Arc arcTiereHundTierePferd = new Arc(vertexTiereHund, vertexTierePferd, constraintNotEqual);
-        Arc arcTiereHundTiereFisch = new Arc(vertexTiereHund, vertexTiereFisch, constraintNotEqual);
-        Arc arcTiereHundTiereKatze = new Arc(vertexTiereHund, vertexTiereKatze, constraintNotEqual);
-        Arc arcTiereHundTiereVogel = new Arc(vertexTiereHund, vertexTiereVogel, constraintNotEqual);
+        Arc arcTiereHundTierePferd = new Arc(vertexTiereHund, vertexTierePferd, ConstraintListNotEqual);
+        Arc arcTiereHundTiereFisch = new Arc(vertexTiereHund, vertexTiereFisch, ConstraintListNotEqual);
+        Arc arcTiereHundTiereKatze = new Arc(vertexTiereHund, vertexTiereKatze, ConstraintListNotEqual);
+        Arc arcTiereHundTiereVogel = new Arc(vertexTiereHund, vertexTiereVogel, ConstraintListNotEqual);
 
-        Arc arcTiereFischTiereHund = new Arc(vertexTiereFisch, vertexTiereHund, constraintNotEqual);
-        Arc arcTiereFischTierePferd = new Arc(vertexTiereFisch, vertexTierePferd, constraintNotEqual);
-        Arc arcTiereFischTiereKatze = new Arc(vertexTiereFisch, vertexTiereKatze, constraintNotEqual);
-        Arc arcTiereFischTiereVogel = new Arc(vertexTiereFisch, vertexTiereVogel, constraintNotEqual);
+        Arc arcTiereFischTiereHund = new Arc(vertexTiereFisch, vertexTiereHund, ConstraintListNotEqual);
+        Arc arcTiereFischTierePferd = new Arc(vertexTiereFisch, vertexTierePferd, ConstraintListNotEqual);
+        Arc arcTiereFischTiereKatze = new Arc(vertexTiereFisch, vertexTiereKatze, ConstraintListNotEqual);
+        Arc arcTiereFischTiereVogel = new Arc(vertexTiereFisch, vertexTiereVogel, ConstraintListNotEqual);
 
-        Arc arcTiereKatzeTiereHund = new Arc(vertexTiereKatze, vertexTiereHund, constraintNotEqual);
-        Arc arcTiereKatzeTiereFisch = new Arc(vertexTiereKatze, vertexTiereFisch, constraintNotEqual);
-        Arc arcTiereKatzeTierePferd = new Arc(vertexTiereKatze, vertexTierePferd, constraintNotEqual);
-        Arc arcTiereKatzeTiereVogel = new Arc(vertexTiereKatze, vertexTiereVogel, constraintNotEqual);
+        Arc arcTiereKatzeTiereHund = new Arc(vertexTiereKatze, vertexTiereHund, ConstraintListNotEqual);
+        Arc arcTiereKatzeTiereFisch = new Arc(vertexTiereKatze, vertexTiereFisch, ConstraintListNotEqual);
+        Arc arcTiereKatzeTierePferd = new Arc(vertexTiereKatze, vertexTierePferd, ConstraintListNotEqual);
+        Arc arcTiereKatzeTiereVogel = new Arc(vertexTiereKatze, vertexTiereVogel, ConstraintListNotEqual);
 
-        Arc arcTiereVogelTiereHund = new Arc(vertexTiereVogel, vertexTiereHund, constraintNotEqual);
-        Arc arcTiereVogelTiereFisch = new Arc(vertexTiereVogel, vertexTiereFisch, constraintNotEqual);
-        Arc arcTiereVogelTiereKatze = new Arc(vertexTiereVogel, vertexTiereKatze, constraintNotEqual);
-        Arc arcTiereVogelTierePferd = new Arc(vertexTiereVogel, vertexTierePferd, constraintNotEqual);
+        Arc arcTiereVogelTiereHund = new Arc(vertexTiereVogel, vertexTiereHund, ConstraintListNotEqual);
+        Arc arcTiereVogelTiereFisch = new Arc(vertexTiereVogel, vertexTiereFisch, ConstraintListNotEqual);
+        Arc arcTiereVogelTiereKatze = new Arc(vertexTiereVogel, vertexTiereKatze, ConstraintListNotEqual);
+        Arc arcTiereVogelTierePferd = new Arc(vertexTiereVogel, vertexTierePferd, ConstraintListNotEqual);
 
         // Farbe
-        Arc arcFarbeGruenFarbeBlau = new Arc(vertexFarbeGruen, vertexFarbeBlau, constraintNotEqual);
-        Arc arcFarbeGruenFarbeRot = new Arc(vertexFarbeGruen, vertexFarbeRot, constraintNotEqual);
-        Arc arcFarbeGruenFarbeGelb = new Arc(vertexFarbeGruen, vertexFarbeGelb, constraintNotEqual);
-        Arc arcFarbeGruenFarbeWeiss = new Arc(vertexFarbeGruen, vertexFarbeWeiss, constraintNotEqual);
+        Arc arcFarbeGruenFarbeBlau = new Arc(vertexFarbeGruen, vertexFarbeBlau, ConstraintListNotEqual);
+        Arc arcFarbeGruenFarbeRot = new Arc(vertexFarbeGruen, vertexFarbeRot, ConstraintListNotEqual);
+        Arc arcFarbeGruenFarbeGelb = new Arc(vertexFarbeGruen, vertexFarbeGelb, ConstraintListNotEqual);
+        Arc arcFarbeGruenFarbeWeiss = new Arc(vertexFarbeGruen, vertexFarbeWeiss, ConstraintListNotEqual);
 
-        Arc arcFarbeBlauFarbeGruen = new Arc(vertexFarbeBlau, vertexFarbeGruen, constraintNotEqual);
-        Arc arcFarbeBlauFarbeRot = new Arc(vertexFarbeBlau, vertexFarbeRot, constraintNotEqual);
-        Arc arcFarbeBlauFarbeGelb = new Arc(vertexFarbeBlau, vertexFarbeGelb, constraintNotEqual);
-        Arc arcFarbeBlauFarbeWeiss = new Arc(vertexFarbeBlau, vertexFarbeWeiss, constraintNotEqual);
+        Arc arcFarbeBlauFarbeGruen = new Arc(vertexFarbeBlau, vertexFarbeGruen, ConstraintListNotEqual);
+        Arc arcFarbeBlauFarbeRot = new Arc(vertexFarbeBlau, vertexFarbeRot, ConstraintListNotEqual);
+        Arc arcFarbeBlauFarbeGelb = new Arc(vertexFarbeBlau, vertexFarbeGelb, ConstraintListNotEqual);
+        Arc arcFarbeBlauFarbeWeiss = new Arc(vertexFarbeBlau, vertexFarbeWeiss, ConstraintListNotEqual);
 
-        Arc arcFarbeRotFarbeBlau = new Arc(vertexFarbeRot, vertexFarbeBlau, constraintNotEqual);
-        Arc arcFarbeRotFarbeGruen = new Arc(vertexFarbeRot, vertexFarbeGruen, constraintNotEqual);
-        Arc arcFarbeRotFarbeGelb = new Arc(vertexFarbeRot, vertexFarbeGelb, constraintNotEqual);
-        Arc arcFarbeRotFarbeWeiss = new Arc(vertexFarbeRot, vertexFarbeWeiss, constraintNotEqual);
+        Arc arcFarbeRotFarbeBlau = new Arc(vertexFarbeRot, vertexFarbeBlau, ConstraintListNotEqual);
+        Arc arcFarbeRotFarbeGruen = new Arc(vertexFarbeRot, vertexFarbeGruen, ConstraintListNotEqual);
+        Arc arcFarbeRotFarbeGelb = new Arc(vertexFarbeRot, vertexFarbeGelb, ConstraintListNotEqual);
+        Arc arcFarbeRotFarbeWeiss = new Arc(vertexFarbeRot, vertexFarbeWeiss, ConstraintListNotEqual);
 
-        Arc arcFarbeGelbFarbeBlau = new Arc(vertexFarbeGelb, vertexFarbeBlau, constraintNotEqual);
-        Arc arcFarbeGelbFarbeRot = new Arc(vertexFarbeGelb, vertexFarbeRot, constraintNotEqual);
-        Arc arcFarbeGelbFarbeGruen = new Arc(vertexFarbeGelb, vertexFarbeGruen, constraintNotEqual);
-        Arc arcFarbeGelbFarbeWeiss = new Arc(vertexFarbeGelb, vertexFarbeWeiss, constraintNotEqual);
+        Arc arcFarbeGelbFarbeBlau = new Arc(vertexFarbeGelb, vertexFarbeBlau, ConstraintListNotEqual);
+        Arc arcFarbeGelbFarbeRot = new Arc(vertexFarbeGelb, vertexFarbeRot, ConstraintListNotEqual);
+        Arc arcFarbeGelbFarbeGruen = new Arc(vertexFarbeGelb, vertexFarbeGruen, ConstraintListNotEqual);
+        Arc arcFarbeGelbFarbeWeiss = new Arc(vertexFarbeGelb, vertexFarbeWeiss, ConstraintListNotEqual);
 
-        Arc arcFarbeWeissFarbeBlau = new Arc(vertexFarbeWeiss, vertexFarbeBlau, constraintNotEqual);
-        Arc arcFarbeWeissFarbeRot = new Arc(vertexFarbeWeiss, vertexFarbeRot, constraintNotEqual);
-        Arc arcFarbeWeissFarbeGelb = new Arc(vertexFarbeWeiss, vertexFarbeGelb, constraintNotEqual);
-        Arc arcFarbeWeissFarbeGruen = new Arc(vertexFarbeWeiss, vertexFarbeGruen, constraintNotEqual);
+        Arc arcFarbeWeissFarbeBlau = new Arc(vertexFarbeWeiss, vertexFarbeBlau, ConstraintListNotEqual);
+        Arc arcFarbeWeissFarbeRot = new Arc(vertexFarbeWeiss, vertexFarbeRot, ConstraintListNotEqual);
+        Arc arcFarbeWeissFarbeGelb = new Arc(vertexFarbeWeiss, vertexFarbeGelb, ConstraintListNotEqual);
+        Arc arcFarbeWeissFarbeGruen = new Arc(vertexFarbeWeiss, vertexFarbeGruen, ConstraintListNotEqual);
 
         // Nationalitaet
-        Arc arcNationalitaetDaeneNationalitaetBrite = new Arc(vertexNationalitaetDaene, vertexNationalitaetBrite, constraintNotEqual);
-        Arc arcNationalitaetDaeneNationalitaetNorwege = new Arc(vertexNationalitaetDaene, vertexNationalitaetNorwege, constraintNotEqual);
-        Arc arcNationalitaetDaeneNationalitaetSchwede = new Arc(vertexNationalitaetDaene, vertexNationalitaetSchwede, constraintNotEqual);
-        Arc arcNationalitaetDaeneNationalitaetDeutsche = new Arc(vertexNationalitaetDaene, vertexNationalitaetDeutsche, constraintNotEqual);
+        Arc arcNationalitaetDaeneNationalitaetBrite = new Arc(vertexNationalitaetDaene, vertexNationalitaetBrite, ConstraintListNotEqual);
+        Arc arcNationalitaetDaeneNationalitaetNorwege = new Arc(vertexNationalitaetDaene, vertexNationalitaetNorwege, ConstraintListNotEqual);
+        Arc arcNationalitaetDaeneNationalitaetSchwede = new Arc(vertexNationalitaetDaene, vertexNationalitaetSchwede, ConstraintListNotEqual);
+        Arc arcNationalitaetDaeneNationalitaetDeutsche = new Arc(vertexNationalitaetDaene, vertexNationalitaetDeutsche, ConstraintListNotEqual);
 
-        Arc arcNationalitaetBriteNationalitaetDaene = new Arc(vertexNationalitaetBrite, vertexNationalitaetDaene, constraintNotEqual);
-        Arc arcNationalitaetBriteNationalitaetNorwege = new Arc(vertexNationalitaetBrite, vertexNationalitaetNorwege, constraintNotEqual);
-        Arc arcNationalitaetBriteNationalitaetSchwede = new Arc(vertexNationalitaetBrite, vertexNationalitaetSchwede, constraintNotEqual);
-        Arc arcNationalitaetBriteNationalitaetDeutsche = new Arc(vertexNationalitaetBrite, vertexNationalitaetDeutsche, constraintNotEqual);
+        Arc arcNationalitaetBriteNationalitaetDaene = new Arc(vertexNationalitaetBrite, vertexNationalitaetDaene, ConstraintListNotEqual);
+        Arc arcNationalitaetBriteNationalitaetNorwege = new Arc(vertexNationalitaetBrite, vertexNationalitaetNorwege, ConstraintListNotEqual);
+        Arc arcNationalitaetBriteNationalitaetSchwede = new Arc(vertexNationalitaetBrite, vertexNationalitaetSchwede, ConstraintListNotEqual);
+        Arc arcNationalitaetBriteNationalitaetDeutsche = new Arc(vertexNationalitaetBrite, vertexNationalitaetDeutsche, ConstraintListNotEqual);
 
-        Arc arcNationalitaetNorwegeNationalitaetBrite = new Arc(vertexNationalitaetNorwege, vertexNationalitaetBrite, constraintNotEqual);
-        Arc arcNationalitaetNorwegeNationalitaetDaene = new Arc(vertexNationalitaetNorwege, vertexNationalitaetDaene, constraintNotEqual);
-        Arc arcNationalitaetNorwegeNationalitaetSchwede = new Arc(vertexNationalitaetNorwege, vertexNationalitaetSchwede, constraintNotEqual);
-        Arc arcNationalitaetNorwegeNationalitaetDeutsche = new Arc(vertexNationalitaetNorwege, vertexNationalitaetDeutsche, constraintNotEqual);
+        Arc arcNationalitaetNorwegeNationalitaetBrite = new Arc(vertexNationalitaetNorwege, vertexNationalitaetBrite, ConstraintListNotEqual);
+        Arc arcNationalitaetNorwegeNationalitaetDaene = new Arc(vertexNationalitaetNorwege, vertexNationalitaetDaene, ConstraintListNotEqual);
+        Arc arcNationalitaetNorwegeNationalitaetSchwede = new Arc(vertexNationalitaetNorwege, vertexNationalitaetSchwede, ConstraintListNotEqual);
+        Arc arcNationalitaetNorwegeNationalitaetDeutsche = new Arc(vertexNationalitaetNorwege, vertexNationalitaetDeutsche, ConstraintListNotEqual);
 
-        Arc arcNationalitaetSchwedeNationalitaetBrite = new Arc(vertexNationalitaetSchwede, vertexNationalitaetBrite, constraintNotEqual);
-        Arc arcNationalitaetSchwedeNationalitaetNorwege = new Arc(vertexNationalitaetSchwede, vertexNationalitaetNorwege, constraintNotEqual);
-        Arc arcNationalitaetSchwedeNationalitaetDaene = new Arc(vertexNationalitaetSchwede, vertexNationalitaetDaene, constraintNotEqual);
-        Arc arcNationalitaetSchwedeNationalitaetDeutsche = new Arc(vertexNationalitaetSchwede, vertexNationalitaetDeutsche, constraintNotEqual);
+        Arc arcNationalitaetSchwedeNationalitaetBrite = new Arc(vertexNationalitaetSchwede, vertexNationalitaetBrite, ConstraintListNotEqual);
+        Arc arcNationalitaetSchwedeNationalitaetNorwege = new Arc(vertexNationalitaetSchwede, vertexNationalitaetNorwege, ConstraintListNotEqual);
+        Arc arcNationalitaetSchwedeNationalitaetDaene = new Arc(vertexNationalitaetSchwede, vertexNationalitaetDaene, ConstraintListNotEqual);
+        Arc arcNationalitaetSchwedeNationalitaetDeutsche = new Arc(vertexNationalitaetSchwede, vertexNationalitaetDeutsche, ConstraintListNotEqual);
 
-        Arc arcNationalitaetDeutscheNationalitaetBrite = new Arc(vertexNationalitaetDeutsche, vertexNationalitaetBrite, constraintNotEqual);
-        Arc arcNationalitaetDeutscheNationalitaetNorwege = new Arc(vertexNationalitaetDeutsche, vertexNationalitaetNorwege, constraintNotEqual);
-        Arc arcNationalitaetDeutscheNationalitaetSchwede = new Arc(vertexNationalitaetDeutsche, vertexNationalitaetSchwede, constraintNotEqual);
-        Arc arcNationalitaetDeutscheNationalitaetDaene = new Arc(vertexNationalitaetDeutsche, vertexNationalitaetDaene, constraintNotEqual);
+        Arc arcNationalitaetDeutscheNationalitaetBrite = new Arc(vertexNationalitaetDeutsche, vertexNationalitaetBrite, ConstraintListNotEqual);
+        Arc arcNationalitaetDeutscheNationalitaetNorwege = new Arc(vertexNationalitaetDeutsche, vertexNationalitaetNorwege, ConstraintListNotEqual);
+        Arc arcNationalitaetDeutscheNationalitaetSchwede = new Arc(vertexNationalitaetDeutsche, vertexNationalitaetSchwede, ConstraintListNotEqual);
+        Arc arcNationalitaetDeutscheNationalitaetDaene = new Arc(vertexNationalitaetDeutsche, vertexNationalitaetDaene, ConstraintListNotEqual);
 
         List<Arc> arcList = new ArrayList<>();
         // Getraenke
@@ -394,8 +405,80 @@ public class AppEinstein {
         arcList.add(arcNationalitaetDeutscheNationalitaetSchwede);
         arcList.add(arcNationalitaetDeutscheNationalitaetDaene);
 
-        SelfLoop selfLoopNationalitaetNorwege   = new SelfLoop(vertexNationalitaetNorwege, constraintNotEqualValueOne);
-        SelfLoop selfLoopGetraenkMilch          = new SelfLoop(vertexGetraenkMilch, constraintNotEqualValueThree);
+        /**
+         * CONSTRAINTS von Aufgabe
+
+        Arc arcGetraenkTeeNationalitaetDaene = new Arc(vertexGetraenkTee, vertexNationalitaetDaene, constraintEqual);
+        Arc arcNationalitaetDaeneGetraenkTee = new Arc(vertexNationalitaetDaene, vertexGetraenkTee, constraintEqual);
+        arcList.add(arcGetraenkTeeNationalitaetDaene);
+        arcList.add(arcNationalitaetDaeneGetraenkTee);
+
+        Arc arcGetraenkKaffeeFarbeGruen = new Arc(vertexGetraenkKaffee, vertexFarbeGruen, constraintEqual);
+        Arc arcFarbeGruenGetraenkKaffee = new Arc(vertexFarbeGruen, vertexGetraenkKaffee, constraintEqual);
+        arcList.add(arcGetraenkKaffeeFarbeGruen);
+        arcList.add(arcFarbeGruenGetraenkKaffee);
+
+        Arc arcGetraenkBierZigarettenWinfield = new Arc(vertexGetraenkBier, vertexZigarettenWinfield, constraintEqual);
+        Arc arcZigarettenWinfieldGetraenkBier = new Arc(vertexZigarettenWinfield, vertexGetraenkBier, constraintEqual);
+        arcList.add(arcGetraenkBierZigarettenWinfield);
+        arcList.add(arcZigarettenWinfieldGetraenkBier);
+
+        Arc arcZigarettenRothmannsNationalitaetDeutsche = new Arc(vertexZigarettenRothmanns, vertexNationalitaetDeutsche, constraintEqual);
+        Arc arcNationalitaetDeutscheZigarettenRothmanns = new Arc(vertexNationalitaetDeutsche, vertexZigarettenRothmanns, constraintEqual);
+        arcList.add(arcZigarettenRothmannsNationalitaetDeutsche);
+        arcList.add(arcNationalitaetDeutscheZigarettenRothmanns);
+
+        Arc arcNationalitaetSchwedeTiereHund = new Arc(vertexNationalitaetSchwede, vertexTiereHund, constraintEqual);
+        Arc arcTiereHundNationalitaetSchwede = new Arc(vertexTiereHund, vertexNationalitaetSchwede, constraintEqual);
+        arcList.add(arcNationalitaetSchwedeTiereHund);
+        arcList.add(arcTiereHundNationalitaetSchwede);
+
+        Arc arcFarbeRotNationalitaetBrite = new Arc(vertexFarbeRot, vertexNationalitaetBrite, constraintEqual);
+        Arc arcNationalitaetBriteFarbeRot = new Arc(vertexNationalitaetBrite, vertexFarbeRot, constraintEqual);
+        arcList.add(arcFarbeRotNationalitaetBrite);
+        arcList.add(arcNationalitaetBriteFarbeRot);
+
+        Arc arcZigarettenPallMallTiereVogel = new Arc(vertexZigarettenPallMall, vertexTiereVogel, constraintEqual);
+        Arc arcTiereVogelZigarettenPallMall = new Arc(vertexTiereVogel, vertexZigarettenPallMall, constraintEqual);
+        arcList.add(arcZigarettenPallMallTiereVogel);
+        arcList.add(arcTiereVogelZigarettenPallMall);
+
+        Arc arcZigarettenDunhillFarbeGelb = new Arc(vertexZigarettenDunhill, vertexFarbeGelb, constraintEqual);
+        Arc arcFarbeGelbZigarettenDunhill = new Arc(vertexFarbeGelb, vertexZigarettenDunhill, constraintEqual);
+        arcList.add(arcZigarettenDunhillFarbeGelb);
+        arcList.add(arcFarbeGelbZigarettenDunhill);
+
+        Arc arcFarbeWeissFarbeGruenLeft  = new Arc(vertexFarbeWeiss, vertexFarbeGruen, constraintLeftNeighbar);
+        Arc arcFarbeWeissFarbeGruenRight = new Arc(vertexFarbeGruen, vertexFarbeWeiss, constraintRightNeighbar);
+        arcList.add(arcFarbeWeissFarbeGruenLeft);
+        arcList.add(arcFarbeWeissFarbeGruenRight);
+
+        Arc arcZigarettenMarlboroGetraenkWasser = new Arc(vertexZigarettenMarlboro, vertexGetraenkWasser, constraintNeighbar);
+        Arc arcGetraenkWasserZigarettenMarlboro = new Arc(vertexGetraenkWasser, vertexZigarettenMarlboro, constraintNeighbar);
+        arcList.add(arcZigarettenMarlboroGetraenkWasser);
+        arcList.add(arcGetraenkWasserZigarettenMarlboro);
+
+
+        Arc arcZigarettenMarlboroTiereKatze = new Arc(vertexZigarettenMarlboro, vertexTiereKatze, constraintNeighbar);
+        Arc arcTiereKatzeZigarettenMarlboro = new Arc(vertexTiereKatze, vertexZigarettenMarlboro, constraintNeighbar);
+        arcList.add(arcZigarettenMarlboroTiereKatze);
+
+
+        Arc arcZigarettenDunhillTierePferd  = new Arc(vertexZigarettenDunhill, vertexTierePferd, constraintNeighbar);
+        Arc arcTierePferdZigarettenDunhill = new Arc(vertexTierePferd, vertexZigarettenDunhill, constraintNeighbar);
+        arcList.add(arcZigarettenDunhillTierePferd);
+        arcList.add(arcTierePferdZigarettenDunhill);
+
+        Arc arcNationalitaetNorwegeFarbeBlau  = new Arc(vertexNationalitaetNorwege, vertexFarbeBlau, constraintNeighbar);
+        Arc arcFarbeBlauNationalitaetNorwege  = new Arc(vertexFarbeBlau, vertexNationalitaetNorwege, constraintNeighbar);
+        arcList.add(arcNationalitaetNorwegeFarbeBlau);
+        arcList.add(arcFarbeBlauNationalitaetNorwege);
+
+         *
+         */
+
+        SelfLoop selfLoopNationalitaetNorwege   = new SelfLoop(vertexNationalitaetNorwege, ConstraintListEqualValueOne);
+        SelfLoop selfLoopGetraenkMilch          = new SelfLoop(vertexGetraenkMilch, ConstraintListEqualValueThree);
 
         List<SelfLoop> selfLoopList = new ArrayList<>();
         selfLoopList.add(selfLoopNationalitaetNorwege);
@@ -405,17 +488,11 @@ public class AppEinstein {
          * ConstraintNetz erstellen
          */
         ConstraintNet constraintNetz = new ConstraintNet(vertexList, arcList, selfLoopList);
-        System.out.println("VertexList  : " + vertexList);
-        System.out.println("ArcList     : " + arcList);
-        System.out.println("SelfLoopList: " + selfLoopList);
+        System.out.println(vertexList);
         System.out.println();
-
-        ConstraintSolver cs = new ConstraintSolver();
-        cs.nc(selfLoopList);
-        System.out.println("VertexList  : " + vertexList);
-        System.out.println("ArcList     : " + arcList);
-        System.out.println("SelfLoopList: " + selfLoopList);
-        System.out.println();
+        ConstraintSatisfactionProblem csp = new ConstraintSatisfactionProblem();
+        List<Arc> solution = csp.findSolution(constraintNetz);
+        System.out.println(solution);
     }
 
 }

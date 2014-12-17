@@ -7,6 +7,7 @@ public class Vertex {
     private int rang;
     private Definition definitionRange;
     private String name;
+    private int lastIndex = 0;
 
     public Vertex(String name, Definition definitionRange){
         this.name = name;
@@ -38,6 +39,14 @@ public class Vertex {
         this.rang = rang;
     }
 
+    public int getLastIndex() {
+        return lastIndex;
+    }
+
+    public void setLastIndex(int lastIndex) {
+        this.lastIndex = lastIndex;
+    }
+
     @Override
     public String toString() {
         return "\n\tVertex{" +
@@ -60,8 +69,6 @@ public class Vertex {
 
         Vertex vertex = (Vertex) o;
 
-        if (definitionRange != null ? !definitionRange.equals(vertex.definitionRange) : vertex.definitionRange != null)
-            return false;
         if (name != null ? !name.equals(vertex.name) : vertex.name != null) return false;
 
         return true;
@@ -69,9 +76,6 @@ public class Vertex {
 
     @Override
     public int hashCode() {
-        int result = definitionRange != null ? definitionRange.hashCode() : 0;
-        result = 31 * result + (name != null ? name.hashCode() : 0);
-        return result;
+        return name != null ? name.hashCode() : 0;
     }
-
 }

@@ -4,9 +4,9 @@ import entities.BinaryConstraint;
 
 public class ConstraintLeftNeighbar implements BinaryConstraint {
     @Override
-    public boolean isConsistent(Object obj1, Object obj2) {
-        int x = (int) obj1;
-        int y = (int) obj2;
+    public boolean isConsistent(Object rechteNachbar, Object linkeNachbar) {
+        int x = (int) rechteNachbar;
+        int y = (int) linkeNachbar;
         return  x-y  == 1;
     }
 

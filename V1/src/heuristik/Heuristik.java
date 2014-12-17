@@ -1,6 +1,5 @@
 package heuristik;
 
-import constraintSolver.ConstraintNet;
 import entities.Vertex;
 
 import java.util.HashMap;
@@ -27,12 +26,10 @@ public enum Heuristik {
 	// So wird der L�sungsraum maximal beschnitten.
 	DYNAMIC_SEARCH_REARRANGEMENT_HEURISTIK;
 
-	public Map<Integer, Vertex> sort(ConstraintNet constraintNetz) {
+	public Map<Integer, Vertex> sort(List<Vertex> vertexList) {
         Map<Integer, Vertex> resultVertexMap = new HashMap<>();
-        List<Vertex> vertexList;
         switch (this) {
 		case NO_HEURISTIK:
-            vertexList = constraintNetz.getVertexList();
             for (int i = 0; i < vertexList.size(); i++){
                 vertexList.get(i).setRang(i + 1);
                 resultVertexMap.put(vertexList.get(i).getRang(),vertexList.get(i));
@@ -43,8 +40,6 @@ public enum Heuristik {
 			/**
 			 * QUICKSORT HIER
 			 */
-            vertexList = constraintNetz.getVertexList();
-
             QuickSort quickSort = new QuickSort();
             List<Vertex> sL = quickSort.quicksort(vertexList);
             for (int i = 0; i < sL.size(); i++){

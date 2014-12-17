@@ -3,18 +3,12 @@ package einsteinApp;
 import app.ConstraintGreaterEqual;
 import app.ConstraintLesserThan;
 import app.ConstraintLesserThanValue;
+import constraintSolver.ConstraintNet;
 import einsteinApp.constraints.ConstraintNotEqual;
-import entities.Arc;
-import entities.BinaryConstraint;
-import entities.Definition;
-import entities.SelfLoop;
-import entities.UnaryConstraint;
-import entities.Vertex;
+import entities.*;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import constraintSolver.ConstraintNet;
 
 public class TestApp {
 
@@ -105,16 +99,16 @@ public class TestApp {
         /**
          * Starten
          */
-        System.out.println(vertexList);
+        System.out.println(arcList);
         //ConstraintSolver.ac3la(v1, arcList);
         ConstraintSatisfactionProblem csp = new ConstraintSatisfactionProblem();
-        csp.findSolution(constraintNetz);
+        List<Arc> resultArcList = csp.findSolution(constraintNetz);
 
         /**
          * Ausgabe
          */
         System.out.println();
-        System.out.println(vertexList);
+        System.out.println(resultArcList);
 
     }
 }

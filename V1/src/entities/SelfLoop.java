@@ -42,4 +42,5 @@ public class SelfLoop {
                 ", constraintList: " + constraintList +
                 "}";
     }
+
 }
